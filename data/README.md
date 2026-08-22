@@ -9,6 +9,11 @@ size_categories:
 task_categories:
 - image-to-text
 license: other
+configs:
+- config_name: default
+  data_files:
+  - split: train
+    path: data/viewer/spotdiff_v1_dev.jsonl
 ---
 
 # SpotDiff v1 Development Dataset
@@ -27,6 +32,7 @@ reproduce the evaluator locally and inspect the benchmark design.
 - `data/annotations/`: approved golden structured differences
 - `data/manifest.json`: item IDs, image paths, and annotation paths
 - `data/dataset_version.json`: release metadata
+- `data/viewer/spotdiff_v1_dev.jsonl`: one uniform viewer row per difference
 
 ## Evaluation
 
