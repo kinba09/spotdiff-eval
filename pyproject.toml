@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spotdiff-eval"
-version = "0.2.1"
+version = "0.2.2"
 description = "Deterministic evaluation for visual spot-the-difference benchmarks"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -17,3 +17,6 @@ spotdiff = "spotdiff_eval.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["spotdiff_eval*"]
+
+[tool.setuptools.package-data]
+spotdiff_eval = ["prompts/*.txt"]

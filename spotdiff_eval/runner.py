@@ -10,6 +10,7 @@ import base64
 import json
 import mimetypes
 import re
+from importlib.resources import files
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from urllib.error import HTTPError, URLError
@@ -19,21 +20,7 @@ from .schema import PredictionItem, load_json
 from .scorer import _resolve_path
 
 
-DEFAULT_PROMPT = """You are solving a visual spot-the-difference task.
-The input is one complete composite image containing two panels. Identify every difference between the panels.
-Return JSON only, with this exact shape:
-{
-  \"differences\": [
-    {
-      \"kind\": \"object_added|object_removed|attribute_change|count_change\",
-      \"subject\": \"short concise subject name\",
-      \"attribute\": \"optional attribute name\",
-      \"from\": \"optional left/top-panel value\",
-      \"to\": \"optional right/bottom-panel value\"
-    }
-  ]
-}
-Do not include coordinates or bounding boxes. Do not include explanations outside the JSON object."""
+DEFAULT_PROMPT = files("spotdiff_eval").joinpath("prompts/spotdiff_v1.txt").read_text(encoding="utf-8")
 
 
 class RunError(RuntimeError):

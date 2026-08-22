@@ -19,7 +19,7 @@ class DownloadError(RuntimeError):
 
 
 _DATASET_ID = re.compile(r"^[^/\s]+/[^/\s]+$")
-_USER_AGENT = "spotdiff-eval/0.2.1"
+_USER_AGENT = "spotdiff-eval/0.2.2"
 
 
 def _ssl_context() -> ssl.SSLContext:

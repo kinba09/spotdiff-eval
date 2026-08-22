@@ -1,9 +1,14 @@
 import unittest
 
-from spotdiff_eval.runner import build_request_payload, extract_prediction_object
+from spotdiff_eval.runner import DEFAULT_PROMPT, build_request_payload, extract_prediction_object
 
 
 class RunnerTests(unittest.TestCase):
+    def test_default_prompt_is_loaded_from_spotdiff_prompt_file(self):
+        self.assertIn("genuine occlusion", DEFAULT_PROMPT)
+        self.assertIn("green_jacket_person_hand", DEFAULT_PROMPT)
+        self.assertIn('"differences"', DEFAULT_PROMPT)
+
     def test_openai_compatible_payload_contains_one_composite_image(self):
         payload = build_request_payload("data:image/png;base64,abc", "find differences", "test-model", "openai_compatible")
         content = payload["messages"][0]["content"]

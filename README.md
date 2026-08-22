@@ -159,6 +159,18 @@ spotdiff run \
 Use `--limit 1` to test one image before running the full dataset. The API
 token is read from an environment variable and is never written to output.
 
+The built-in prompt is maintained separately at
+`spotdiff_eval/prompts/spotdiff_v1.txt`. Override it for experiments with:
+
+```bash
+spotdiff run \
+  --endpoint https://your-provider.example/v1/chat/completions \
+  --model your-vision-model \
+  --prompt-file prompts/my-spotdiff-prompt.txt \
+  --manifest data/manifest.json \
+  --output predictions/my-model.json
+```
+
 ## Community leaderboard
 
 See [`LEADERBOARD.md`](LEADERBOARD.md) for the self-reported development
