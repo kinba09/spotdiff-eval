@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0009_donuts",
+  "image": "data/images/scene_0009_donuts.png",
+  "panel_layout": "side_by_side",
+  "panel_order": ["left", "right"],
+  "review_status": "approved",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "object_removed",
+      "subject": "central_pink_donut_sprinkles",
+      "description": "Several sprinkles on the central pink donut are missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d02",
+      "kind": "attribute_change",
+      "subject": "lower_right_chocolate_donut_sprinkles",
+      "attribute": "color",
+      "from": "green sprinkles",
+      "to": "blue sprinkles",
+      "description": "Several sprinkles on the lower-right chocolate donut change from green to blue.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "object_added",
+      "subject": "top_right_red_sprinkle",
+      "description": "A red sprinkle appears near the top-right area in the right panel; it is absent in the left panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "object_removed",
+      "subject": "top_left_yellow_sprinkle",
+      "description": "A yellow sprinkle near the upper-left area is missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d05",
+      "kind": "object_removed",
+      "subject": "wooden_spoon_text",
+      "description": "The printed text on the wooden spoon is missing in the right panel.",
+      "confidence": "high"
+    }
+  ]
+}

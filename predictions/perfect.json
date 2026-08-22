@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "model": "perfect-baseline",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {"kind": "count_change", "subject": "sun", "attribute": "sun_rays", "from": "fewer rays", "to": "more rays"},
+        {"kind": "attribute_change", "subject": "upper_left_cloud", "attribute": "shape", "from": "larger cloud shape", "to": "smaller cloud shape"},
+        {"kind": "object_removed", "subject": "playground_flag"},
+        {"kind": "object_added", "subject": "small_cloud"},
+        {"kind": "object_added", "subject": "tree_flower", "count": 4},
+        {"kind": "attribute_change", "subject": "climbing_wall_handhold", "attribute": "shape", "from": "horizontal oval", "to": "vertical oval"},
+        {"kind": "attribute_change", "subject": "playground_front_panel", "attribute": "opening_shape", "from": "circular opening", "to": "arched doorway"},
+        {"kind": "attribute_change", "subject": "spring_horse", "attribute": "tail_shape", "from": "short single curl", "to": "longer wavy tail"},
+        {"kind": "attribute_change", "subject": "center_flower", "attribute": "flower_type", "from": "daisy", "to": "tulip"},
+        {"kind": "attribute_change", "subject": "boy_shirt", "attribute": "shirt_design", "from": "star", "to": "horizontal stripes"}
+      ]
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "differences": [
+        {"kind": "attribute_change", "subject": "skyline_building", "attribute": "height", "from": "shorter rectangular building", "to": "taller rectangular building"},
+        {"kind": "object_removed", "subject": "skyline_building"},
+        {"kind": "attribute_change", "subject": "boardwalk_detail", "attribute": "appearance", "from": "dark marked plank/detail", "to": "different light/dark plank detail"},
+        {"kind": "attribute_change", "subject": "lower_railing_detail", "attribute": "appearance", "from": "one dark rectangular detail", "to": "different dark/light detail"},
+        {"kind": "attribute_change", "subject": "dog_toy", "attribute": "color", "from": "yellow and blue", "to": "red"}
+      ]
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "differences": [
+        {"kind": "object_added", "subject": "small_cloud"},
+        {"kind": "object_added", "subject": "birds", "count": 2},
+        {"kind": "object_removed", "subject": "small_cactus"},
+        {"kind": "attribute_change", "subject": "middle_cactus", "attribute": "side_arm", "from": "single side arm", "to": "additional upright side arm"},
+        {"kind": "attribute_change", "subject": "small_background_cactus", "attribute": "appearance", "from": "yellow-green cactus", "to": "dark blue-green cactus"}
+      ]
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "differences": [
+        {"kind": "object_removed", "subject": "small_stem"},
+        {"kind": "attribute_change", "subject": "curled_dried_leaf", "attribute": "shape", "from": "curled leaf with loop on the left", "to": "curled leaf with loop on the right"},
+        {"kind": "object_added", "subject": "small_stemmed_seed"},
+        {"kind": "attribute_change", "subject": "left_dried_leaf", "attribute": "color", "from": "orange-red", "to": "yellow"},
+        {"kind": "object_added", "subject": "upper_right_seed"}
+      ]
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "differences": [
+        {"kind": "attribute_change", "subject": "upper_left_satellite_sphere", "attribute": "yellow_window_panel", "from": "present", "to": "absent"},
+        {"kind": "object_removed", "subject": "upper_brick"},
+        {"kind": "object_removed", "subject": "balcony_adult_arm"},
+        {"kind": "attribute_change", "subject": "middle_brick", "attribute": "segmentation", "from": "split into two sections", "to": "single solid brick"},
+        {"kind": "object_removed", "subject": "storefront_red_panel"},
+        {"kind": "object_removed", "subject": "lower_left_sphere_window_panel"},
+        {"kind": "attribute_change", "subject": "central_left_support_assembly", "attribute": "line_detail", "from": "extra diagonal/marked line", "to": "line absent or changed"},
+        {"kind": "object_removed", "subject": "diagonal_support_bar"},
+        {"kind": "attribute_change", "subject": "green_jacket_person_hand", "attribute": "occlusion", "from": "visible in front of the building", "to": "behind the building"},
+        {"kind": "attribute_change", "subject": "red_shirt_child_shoe", "attribute": "occlusion", "from": "visible in front of the orange slab", "to": "behind the orange slab"}
+      ]
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "differences": [
+        {"kind": "attribute_change", "subject": "upper_flower_cluster", "attribute": "appearance", "from": "orange flowers", "to": "green foliage without orange flowers"},
+        {"kind": "object_added", "subject": "broad_leaf_in_upper_planter"},
+        {"kind": "attribute_change", "subject": "lower_table_leg", "attribute": "color", "from": "red", "to": "green"},
+        {"kind": "object_removed", "subject": "middle_potted_plant_leaf"},
+        {"kind": "attribute_change", "subject": "garden_tool_handle", "attribute": "ring_count", "from": "fewer rings/ridges", "to": "more rings/ridges"}
+      ]
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "differences": [
+        {"kind": "attribute_change", "subject": "lower_left_wine_glass", "attribute": "drink_color", "from": "red", "to": "yellow"},
+        {"kind": "object_added", "subject": "grape_above_board"},
+        {"kind": "object_removed", "subject": "cutting_board_handle_hole"},
+        {"kind": "attribute_change", "subject": "cheese_knife_handle", "attribute": "color", "from": "light brown", "to": "dark brown"},
+        {"kind": "object_removed", "subject": "loose_almond"},
+        {"kind": "attribute_change", "subject": "corkscrew", "attribute": "coil_length", "from": "shorter coil", "to": "longer coil"}
+      ]
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "differences": [
+        {"kind": "attribute_change", "subject": "upper_blue_object", "attribute": "color", "from": "blue", "to": "green"},
+        {"kind": "object_removed", "subject": "thin_blue_stick"},
+        {"kind": "object_removed", "subject": "small_pink_square"},
+        {"kind": "attribute_change", "subject": "crescent_shaped_object", "attribute": "orientation", "from": "original orientation", "to": "horizontally mirrored orientation"},
+        {"kind": "object_removed", "subject": "small_yellow_circle"}
+      ]
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "differences": [
+        {"kind": "object_removed", "subject": "central_pink_donut_sprinkles"},
+        {"kind": "attribute_change", "subject": "lower_right_chocolate_donut_sprinkles", "attribute": "color", "from": "green sprinkles", "to": "blue sprinkles"},
+        {"kind": "object_added", "subject": "top_right_red_sprinkle"},
+        {"kind": "object_removed", "subject": "top_left_yellow_sprinkle"},
+        {"kind": "object_removed", "subject": "wooden_spoon_text"}
+      ]
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "differences": [
+        {"kind": "attribute_change", "subject": "large_striped_beach_umbrella", "attribute": "stripe_color", "from": "blue and white", "to": "brown and white"},
+        {"kind": "attribute_change", "subject": "beach_lounge_chair", "attribute": "color", "from": "orange", "to": "yellow"},
+        {"kind": "object_added", "subject": "distant_island"},
+        {"kind": "object_removed", "subject": "closed_beach_umbrella"},
+        {"kind": "object_removed", "subject": "small_swimmer_in_water"}
+      ]
+    }
+  ]
+}

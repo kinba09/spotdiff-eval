@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0006_garden",
+  "image": "data/images/scene_0006_garden.png",
+  "panel_layout": "side_by_side",
+  "panel_order": ["left", "right"],
+  "review_status": "approved",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "attribute_change",
+      "subject": "upper_flower_cluster",
+      "attribute": "appearance",
+      "from": "orange flowers",
+      "to": "green foliage without orange flowers",
+      "description": "The orange flowers in the upper planter are absent/replaced by green foliage in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d02",
+      "kind": "object_added",
+      "subject": "broad_leaf_in_upper_planter",
+      "description": "A broad leaf is absent from the upper planter in the left panel and appears in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "attribute_change",
+      "subject": "lower_table_leg",
+      "attribute": "color",
+      "from": "red",
+      "to": "green",
+      "description": "The lower table leg changes from red to green.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "object_removed",
+      "subject": "middle_potted_plant_leaf",
+      "description": "A green leaf on the middle potted plant is present in the left panel but missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d05",
+      "kind": "attribute_change",
+      "subject": "garden_tool_handle",
+      "attribute": "ring_count",
+      "from": "fewer rings/ridges",
+      "to": "more rings/ridges",
+      "description": "The wooden garden tool handle at the bottom right has more rings or ridges in the right panel.",
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0005_brussels_illustration",
+  "image": "data/images/scene_0005_brussels_illustration.jpg",
+  "panel_layout": "top_bottom",
+  "panel_order": ["top", "bottom"],
+  "review_status": "approved",
+  "review_notes": "Updated from the user's marked-up correction image. Ten circled differences are included.",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "attribute_change",
+      "subject": "upper_left_satellite_sphere",
+      "attribute": "yellow_window_panel",
+      "from": "present",
+      "to": "absent",
+      "description": "A yellow window panel on the upper-left sphere is missing in the bottom panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d02",
+      "kind": "object_removed",
+      "subject": "upper_brick",
+      "description": "A large red brick near the top of the brick wall is missing in the bottom panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "object_removed",
+      "subject": "balcony_adult_arm",
+      "description": "The adult's left arm/hand extending from behind the curtain is missing in the bottom panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "attribute_change",
+      "subject": "middle_brick",
+      "attribute": "segmentation",
+      "from": "split into two sections",
+      "to": "single solid brick",
+      "description": "A red brick in the middle of the wall changes from two sections to one solid brick.",
+      "confidence": "high"
+    },
+    {
+      "id": "d05",
+      "kind": "object_removed",
+      "subject": "storefront_red_panel",
+      "description": "A red rectangular panel in the right-side storefront is missing in the bottom panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d06",
+      "kind": "object_removed",
+      "subject": "lower_left_sphere_window_panel",
+      "description": "One yellow window panel on the lower-left sphere is missing in the bottom panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d07",
+      "kind": "attribute_change",
+      "subject": "central_left_support_assembly",
+      "attribute": "line_detail",
+      "from": "extra diagonal/marked line",
+      "to": "line absent or changed",
+      "description": "A small line detail on the support assembly at the central-left circled location changes.",
+      "confidence": "medium"
+    },
+    {
+      "id": "d08",
+      "kind": "object_removed",
+      "subject": "diagonal_support_bar",
+      "description": "A diagonal support bar below the central-right connector is missing in the bottom panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d09",
+      "kind": "attribute_change",
+      "subject": "green_jacket_person_hand",
+      "attribute": "occlusion",
+      "from": "visible in front of the building",
+      "to": "behind the building",
+      "description": "The person's hand moves behind the building in the bottom panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d10",
+      "kind": "attribute_change",
+      "subject": "red_shirt_child_shoe",
+      "attribute": "occlusion",
+      "from": "visible in front of the orange slab",
+      "to": "behind the orange slab",
+      "description": "The person's shoe moves behind the orange slab in the bottom panel.",
+      "confidence": "high"
+    }
+  ]
+}

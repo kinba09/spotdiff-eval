@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0010_beach",
+  "image": "data/images/scene_0010_beach.png",
+  "panel_layout": "side_by_side",
+  "panel_order": ["left", "right"],
+  "review_status": "approved",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "attribute_change",
+      "subject": "large_striped_beach_umbrella",
+      "attribute": "stripe_color",
+      "from": "blue and white",
+      "to": "brown and white",
+      "description": "The large striped beach umbrella changes from blue-and-white to brown-and-white stripes.",
+      "confidence": "high"
+    },
+    {
+      "id": "d02",
+      "kind": "attribute_change",
+      "subject": "beach_lounge_chair",
+      "attribute": "color",
+      "from": "orange",
+      "to": "yellow",
+      "description": "A beach lounge chair changes from orange to yellow.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "object_added",
+      "subject": "distant_island",
+      "description": "A distant island appears on the far-right horizon in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "object_removed",
+      "subject": "closed_beach_umbrella",
+      "description": "A closed beach umbrella near the center is missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d05",
+      "kind": "object_removed",
+      "subject": "small_swimmer_in_water",
+      "description": "A small swimmer or floating dark object in the water is missing in the right panel.",
+      "confidence": "medium"
+    }
+  ]
+}

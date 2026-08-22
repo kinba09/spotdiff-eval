@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0001_playground",
+  "image": "data/images/scene_0001_playground.jpg",
+  "panel_layout": "side_by_side",
+  "panel_order": ["left", "right"],
+  "review_status": "approved",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "count_change",
+      "subject": "sun",
+      "attribute": "sun_rays",
+      "from": "fewer rays",
+      "to": "more rays",
+      "description": "The right panel has additional rays around the sun.",
+      "confidence": "high"
+    },
+    {
+      "id": "d02",
+      "kind": "attribute_change",
+      "subject": "upper_left_cloud",
+      "attribute": "shape",
+      "from": "larger cloud shape",
+      "to": "smaller cloud shape",
+      "description": "The cloud above the playground roof on the left changes shape.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "object_removed",
+      "subject": "playground_flag",
+      "description": "The flag on top of the playground tower is missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "object_added",
+      "subject": "small_cloud",
+      "description": "A small cloud appears to the lower right of the large upper-right cloud.",
+      "confidence": "high"
+    },
+    {
+      "id": "d05",
+      "kind": "object_added",
+      "subject": "tree_flower",
+      "count": 4,
+      "description": "Four flowers appear in the tree canopy in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d06",
+      "kind": "attribute_change",
+      "subject": "climbing_wall_handhold",
+      "attribute": "shape",
+      "from": "horizontal oval",
+      "to": "vertical oval",
+      "description": "One handhold on the climbing wall changes orientation/shape.",
+      "confidence": "medium"
+    },
+    {
+      "id": "d07",
+      "kind": "attribute_change",
+      "subject": "playground_front_panel",
+      "attribute": "opening_shape",
+      "from": "circular opening",
+      "to": "arched doorway",
+      "description": "The circular opening below the playground is replaced by an arched doorway.",
+      "confidence": "high"
+    },
+    {
+      "id": "d08",
+      "kind": "attribute_change",
+      "subject": "spring_horse",
+      "attribute": "tail_shape",
+      "from": "short single curl",
+      "to": "longer wavy tail",
+      "description": "The spring horse's tail changes shape.",
+      "confidence": "high"
+    },
+    {
+      "id": "d09",
+      "kind": "attribute_change",
+      "subject": "center_flower",
+      "attribute": "flower_type",
+      "from": "daisy",
+      "to": "tulip",
+      "description": "The middle flower at the bottom changes from a daisy to a tulip.",
+      "confidence": "high"
+    },
+    {
+      "id": "d10",
+      "kind": "attribute_change",
+      "subject": "boy_shirt",
+      "attribute": "shirt_design",
+      "from": "star",
+      "to": "horizontal stripes",
+      "description": "The boy's shirt changes from a star design to horizontal stripes.",
+      "confidence": "high"
+    }
+  ]
+}

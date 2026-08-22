@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spotdiff-eval"
+version = "0.1.0"
+description = "Deterministic evaluation for visual spot-the-difference benchmarks"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "SpotDiff Eval contributors"}]
+dependencies = []
+
+[project.scripts]
+spotdiff = "spotdiff_eval.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["spotdiff_eval*"]

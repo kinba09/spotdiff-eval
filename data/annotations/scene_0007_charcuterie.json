@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0007_charcuterie",
+  "image": "data/images/scene_0007_charcuterie.png",
+  "panel_layout": "side_by_side",
+  "panel_order": ["left", "right"],
+  "review_status": "approved",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "attribute_change",
+      "subject": "lower_left_wine_glass",
+      "attribute": "drink_color",
+      "from": "red",
+      "to": "yellow",
+      "description": "The drink in the lower-left glass changes from red to yellow.",
+      "confidence": "high"
+    },
+    {
+      "id": "d02",
+      "kind": "object_added",
+      "subject": "grape_above_board",
+      "description": "A single grape appears above the cutting board in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "object_removed",
+      "subject": "cutting_board_handle_hole",
+      "description": "The hole in the cutting-board handle is missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "attribute_change",
+      "subject": "cheese_knife_handle",
+      "attribute": "color",
+      "from": "light brown",
+      "to": "dark brown",
+      "description": "The cheese knife handle changes from light brown to dark brown.",
+      "confidence": "high"
+    },
+    {
+      "id": "d05",
+      "kind": "object_removed",
+      "subject": "loose_almond",
+      "description": "A loose almond to the right of the cutting board is missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d06",
+      "kind": "attribute_change",
+      "subject": "corkscrew",
+      "attribute": "coil_length",
+      "from": "shorter coil",
+      "to": "longer coil",
+      "description": "The corkscrew coil at the top changes length and shape.",
+      "confidence": "high"
+    }
+  ]
+}

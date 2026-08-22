@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0004_fishing_net",
+  "image": "data/images/scene_0004_fishing_net.jpg",
+  "panel_layout": "side_by_side",
+  "panel_order": ["left", "right"],
+  "review_status": "approved",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "object_removed",
+      "subject": "small_stem",
+      "description": "A small upright stem below the upper-left leaf is missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d02",
+      "kind": "attribute_change",
+      "subject": "curled_dried_leaf",
+      "attribute": "shape",
+      "from": "curled leaf with loop on the left",
+      "to": "curled leaf with loop on the right",
+      "description": "The dried leaf below the net changes its curl/orientation.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "object_added",
+      "subject": "small_stemmed_seed",
+      "description": "A small stemmed seed/flower appears in the lower-right area in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "attribute_change",
+      "subject": "left_dried_leaf",
+      "attribute": "color",
+      "from": "orange-red",
+      "to": "yellow",
+      "description": "The dried leaf on the lower-left side changes from orange-red to yellow.",
+      "confidence": "high"
+    },
+    {
+      "id": "d05",
+      "kind": "object_added",
+      "subject": "upper_right_seed",
+      "description": "A small seed/flower appears near the upper-right edge in the right panel.",
+      "confidence": "high"
+    }
+  ]
+}

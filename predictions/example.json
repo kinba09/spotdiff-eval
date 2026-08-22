@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "model": "example-model",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "playground_flag"
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shirt",
+          "attribute": "shirt_design",
+          "from": "star",
+          "to": "horizontal stripes"
+        }
+      ]
+    }
+  ]
+}

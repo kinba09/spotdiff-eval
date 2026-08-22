@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0003_cactus_landscape",
+  "image": "data/images/scene_0003_cactus_landscape.jpg",
+  "panel_layout": "side_by_side",
+  "panel_order": ["left", "right"],
+  "review_status": "approved",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "object_added",
+      "subject": "small_cloud",
+      "description": "A small cloud appears in the upper-left area of the sky in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d02",
+      "kind": "object_added",
+      "subject": "birds",
+      "count": 2,
+      "description": "Two birds appear in the upper-right sky in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "object_removed",
+      "subject": "small_cactus",
+      "description": "The small cactus in the lower-left foreground is missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "attribute_change",
+      "subject": "middle_cactus",
+      "attribute": "side_arm",
+      "from": "single side arm",
+      "to": "additional upright side arm",
+      "description": "The side growth on the middle cactus changes shape.",
+      "confidence": "medium"
+    },
+    {
+      "id": "d05",
+      "kind": "attribute_change",
+      "subject": "small_background_cactus",
+      "attribute": "appearance",
+      "from": "yellow-green cactus",
+      "to": "dark blue-green cactus",
+      "description": "A small cactus in the background changes its appearance/color.",
+      "confidence": "high"
+    }
+  ]
+}

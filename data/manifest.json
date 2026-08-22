@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0",
+  "dataset_name": "SpotDiff Eval",
+  "review_status": "approved",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "image": "data/images/scene_0001_playground.jpg",
+      "annotation": "data/annotations/scene_0001_playground.json",
+      "panel_layout": "side_by_side"
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "image": "data/images/scene_0002_city_dog.jpg",
+      "annotation": "data/annotations/scene_0002_city_dog.json",
+      "panel_layout": "side_by_side"
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "image": "data/images/scene_0003_cactus_landscape.jpg",
+      "annotation": "data/annotations/scene_0003_cactus_landscape.json",
+      "panel_layout": "side_by_side"
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "image": "data/images/scene_0004_fishing_net.jpg",
+      "annotation": "data/annotations/scene_0004_fishing_net.json",
+      "panel_layout": "side_by_side"
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "image": "data/images/scene_0005_brussels_illustration.jpg",
+      "annotation": "data/annotations/scene_0005_brussels_illustration.json",
+      "panel_layout": "top_bottom"
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "image": "data/images/scene_0006_garden.png",
+      "annotation": "data/annotations/scene_0006_garden.json",
+      "panel_layout": "side_by_side"
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "image": "data/images/scene_0007_charcuterie.png",
+      "annotation": "data/annotations/scene_0007_charcuterie.json",
+      "panel_layout": "side_by_side"
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "image": "data/images/scene_0008_craft_objects.png",
+      "annotation": "data/annotations/scene_0008_craft_objects.json",
+      "panel_layout": "side_by_side"
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "image": "data/images/scene_0009_donuts.png",
+      "annotation": "data/annotations/scene_0009_donuts.json",
+      "panel_layout": "side_by_side"
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "image": "data/images/scene_0010_beach.png",
+      "annotation": "data/annotations/scene_0010_beach.json",
+      "panel_layout": "side_by_side"
+    }
+  ]
+}

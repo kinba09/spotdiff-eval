@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0008_craft_objects",
+  "image": "data/images/scene_0008_craft_objects.png",
+  "panel_layout": "side_by_side",
+  "panel_order": ["left", "right"],
+  "review_status": "approved",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "attribute_change",
+      "subject": "upper_blue_object",
+      "attribute": "color",
+      "from": "blue",
+      "to": "green",
+      "description": "The upper blue object changes to green in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d02",
+      "kind": "object_removed",
+      "subject": "thin_blue_stick",
+      "description": "A thin blue stick near the lower-left area is missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "object_removed",
+      "subject": "small_pink_square",
+      "description": "A small pink square near the upper-right purple objects is missing in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "attribute_change",
+      "subject": "crescent_shaped_object",
+      "attribute": "orientation",
+      "from": "original orientation",
+      "to": "horizontally mirrored orientation",
+      "description": "The crescent-shaped object is mirrored horizontally in the right panel.",
+      "confidence": "high"
+    },
+    {
+      "id": "d05",
+      "kind": "object_removed",
+      "subject": "small_yellow_circle",
+      "description": "One of the two small yellow circles is missing in the right panel.",
+      "confidence": "high"
+    }
+  ]
+}

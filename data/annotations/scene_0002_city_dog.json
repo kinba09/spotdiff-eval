@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "item_id": "scene_0002_city_dog",
+  "image": "data/images/scene_0002_city_dog.jpg",
+  "panel_layout": "side_by_side",
+  "panel_order": ["left", "right"],
+  "review_status": "approved",
+  "review_notes": "Updated from the user's marked-up correction image; five circled differences are included.",
+  "differences": [
+    {
+      "id": "d01",
+      "kind": "attribute_change",
+      "subject": "skyline_building",
+      "attribute": "height",
+      "from": "shorter rectangular building",
+      "to": "taller rectangular building",
+      "description": "One blue rectangular building in the skyline is taller in the right panel.",
+      "confidence": "medium"
+    },
+    {
+      "id": "d02",
+      "kind": "object_removed",
+      "subject": "skyline_building",
+      "description": "A small building in the skyline is present in the left panel but absent in the right panel, where trees are visible instead.",
+      "confidence": "high"
+    },
+    {
+      "id": "d03",
+      "kind": "attribute_change",
+      "subject": "boardwalk_detail",
+      "attribute": "appearance",
+      "from": "dark marked plank/detail",
+      "to": "different light/dark plank detail",
+      "description": "A small marked detail on the boardwalk changes between panels.",
+      "confidence": "high"
+    },
+    {
+      "id": "d04",
+      "kind": "attribute_change",
+      "subject": "lower_railing_detail",
+      "attribute": "appearance",
+      "from": "one dark rectangular detail",
+      "to": "different dark/light detail",
+      "description": "A small dark detail on the lower railing changes between panels.",
+      "confidence": "high"
+    },
+    {
+      "id": "d05",
+      "kind": "attribute_change",
+      "subject": "dog_toy",
+      "attribute": "color",
+      "from": "yellow and blue",
+      "to": "red",
+      "description": "The toy beside the dog changes color from yellow/blue to red.",
+      "confidence": "high"
+    }
+  ]
+}
