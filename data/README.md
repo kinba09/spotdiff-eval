@@ -23,10 +23,10 @@ reproduce the evaluator locally and inspect the benchmark design.
 
 ## Layout
 
-- `images/`: composite images with both panels
-- `annotations/`: approved golden structured differences
-- `manifest.json`: item IDs, image paths, and annotation paths
-- `dataset_version.json`: release metadata
+- `data/images/`: composite images with both panels
+- `data/annotations/`: approved golden structured differences
+- `data/manifest.json`: item IDs, image paths, and annotation paths
+- `data/dataset_version.json`: release metadata
 
 ## Evaluation
 
