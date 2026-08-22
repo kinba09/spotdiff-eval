@@ -150,6 +150,7 @@ def _safe_ratio(numerator: float, denominator: float, empty_value: float = 0.0) 
 def _item_score(item_id: str, expected: Sequence[Difference], predicted: Sequence[Difference]) -> Dict[str, Any]:
     matches, missed_indices, extra_indices = match_differences(predicted, expected)
     true_positives = len(matches)
+    exact_matches = sum(1 for match in matches if match.attribute_accuracy >= 0.9999)
     recall = _safe_ratio(true_positives, len(expected), empty_value=1.0)
     precision = _safe_ratio(true_positives, len(predicted), empty_value=1.0 if not expected else 0.0)
     attribute_accuracy = _safe_ratio(
@@ -170,11 +171,13 @@ def _item_score(item_id: str, expected: Sequence[Difference], predicted: Sequenc
             "precision": round(precision, 4),
             "attribute_accuracy": round(attribute_accuracy, 4),
             "overall_score": round(overall, 4),
+            "difference_coverage": round(_safe_ratio(exact_matches, len(expected), empty_value=1.0), 4),
         },
         "counts": {
             "gold_differences": len(expected),
             "predicted_differences": len(predicted),
             "correct_differences": true_positives,
+            "exact_correct_differences": exact_matches,
             "missed_differences": len(missed_indices),
             "extra_predictions": len(extra_indices),
         },
@@ -239,6 +242,7 @@ def evaluate_manifest(manifest_path: Path, prediction_path: Path) -> Dict[str, A
     gold_total = sum(report["counts"]["gold_differences"] for report in item_reports)
     predicted_total = sum(report["counts"]["predicted_differences"] for report in item_reports)
     matched_total = sum(report["counts"]["correct_differences"] for report in item_reports)
+    exact_matched_total = sum(report["counts"]["exact_correct_differences"] for report in item_reports)
     predicted_total += sum(item["predicted_differences"] for item in unknown_items)
     attribute_sum = sum(
         report["metrics"]["attribute_accuracy"] * report["counts"]["correct_differences"]
@@ -255,7 +259,7 @@ def evaluate_manifest(manifest_path: Path, prediction_path: Path) -> Dict[str, A
 
     return {
         "schema_version": "1.0",
-        "evaluator_version": "0.1.0",
+        "evaluator_version": "0.2.0",
         "model": predictions.model,
         "weights": WEIGHTS,
         "metrics": {
@@ -263,12 +267,14 @@ def evaluate_manifest(manifest_path: Path, prediction_path: Path) -> Dict[str, A
             "precision": round(precision, 4),
             "attribute_accuracy": round(attribute_accuracy, 4),
             "overall_score": round(overall, 4),
+            "difference_coverage": round(_safe_ratio(exact_matched_total, gold_total, empty_value=1.0), 4),
         },
         "counts": {
             "items": len(item_reports),
             "gold_differences": gold_total,
             "predicted_differences": predicted_total,
             "correct_differences": matched_total,
+            "exact_correct_differences": exact_matched_total,
         },
         "items": item_reports,
         "unknown_prediction_items": unknown_items,

@@ -1,6 +1,7 @@
 {
   "schema_version": "1.0",
   "dataset_name": "SpotDiff Eval",
+  "dataset_version": "spotdiff-v1-dev",
   "review_status": "approved",
   "items": [
     {

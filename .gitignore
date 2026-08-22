@@ -4,5 +4,6 @@ __pycache__/
 .venv/
 venv/
 results/
+build/
 .DS_Store
 .env

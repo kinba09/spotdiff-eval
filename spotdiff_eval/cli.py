@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 from typing import Any, Dict
 
+from .huggingface import DownloadError, download_dataset, token_from_environment
 from .runner import DEFAULT_PROMPT, RunError, run_manifest, write_predictions
 from .scorer import evaluate_manifest, write_report
 from .schema import SchemaError
@@ -24,6 +25,7 @@ def _print_report(report: Dict[str, Any]) -> None:
     print(f"Recall: {_score_percent(metrics['recall'])}")
     print(f"Precision: {_score_percent(metrics['precision'])}")
     print(f"Attribute accuracy: {_score_percent(metrics['attribute_accuracy'])}")
+    print(f"Difference coverage: {_score_percent(metrics['difference_coverage'])}")
     print(
         "Differences: "
         f"{counts['correct_differences']} correct / "
@@ -53,6 +55,12 @@ def build_parser() -> argparse.ArgumentParser:
     evaluate.add_argument("--predictions", required=True, type=Path, help="model predictions JSON file")
     evaluate.add_argument("--manifest", type=Path, default=Path("data/manifest.json"), help="SpotDiff manifest JSON file")
     evaluate.add_argument("--output", type=Path, help="optional path for the full JSON report")
+
+    download = subparsers.add_parser("download", help="download a public SpotDiff dataset from Hugging Face")
+    download.add_argument("--dataset", required=True, help="Hugging Face dataset id, for example Abnik/spotdiff-v1-dev")
+    download.add_argument("--output", type=Path, default=Path("."), help="directory where repository files are written")
+    download.add_argument("--revision", default="main", help="Hugging Face branch, tag, or commit")
+    download.add_argument("--token-env", default="HF_TOKEN", help="optional environment variable for a private dataset token")
 
     run = subparsers.add_parser("run", help="send composite images to a model endpoint and write predictions JSON")
     run.add_argument("--endpoint", required=True, help="model endpoint URL")
@@ -85,6 +93,20 @@ def main(argv: Any = None) -> int:
                 print(f"\nReport written to {args.output}")
             return 0
         except (OSError, SchemaError, ValueError, json.JSONDecodeError) as exc:
+            print(f"spotdiff: error: {exc}", file=sys.stderr)
+            return 2
+    if args.command == "download":
+        try:
+            result = download_dataset(
+                dataset_id=args.dataset,
+                output_dir=args.output,
+                revision=args.revision,
+                token=token_from_environment(args.token_env),
+            )
+            print(f"Downloaded {len(result.files)} files from {result.dataset}@{result.revision}")
+            print(f"Files written under {result.output_dir}")
+            return 0
+        except (DownloadError, OSError, ValueError) as exc:
             print(f"spotdiff: error: {exc}", file=sys.stderr)
             return 2
     if args.command == "run":

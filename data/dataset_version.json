@@ -1,0 +1,11 @@
+{
+  "dataset_id": "Abnik/spotdiff-v1-dev",
+  "version": "spotdiff-v1-dev",
+  "status": "approved",
+  "task": "structured visual spot-the-difference detection",
+  "items": 10,
+  "gold_differences": 61,
+  "panels_per_image": 2,
+  "coordinates_required": false,
+  "created_by": "SpotDiff Eval contributors"
+}

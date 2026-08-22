@@ -41,6 +41,8 @@ class ScorerTests(unittest.TestCase):
         self.assertEqual(report["metrics"]["precision"], 1.0)
         self.assertEqual(report["metrics"]["attribute_accuracy"], 1.0)
         self.assertEqual(report["metrics"]["overall_score"], 1.0)
+        self.assertEqual(report["metrics"]["difference_coverage"], 1.0)
+        self.assertEqual(report["counts"]["exact_correct_differences"], 61)
 
     def test_all_missed_predictions_score_zero(self):
         manifest = json.loads((ROOT / "data/manifest.json").read_text(encoding="utf-8"))
@@ -107,6 +109,7 @@ class ScorerTests(unittest.TestCase):
         item = report["items"][0]
         self.assertEqual(item["counts"]["correct_differences"], 1)
         self.assertLess(item["metrics"]["attribute_accuracy"], 1.0)
+        self.assertEqual(item["metrics"]["difference_coverage"], 0.0)
 
     def test_exact_structured_match(self):
         expected = [Difference.from_dict({"id": "d1", "kind": "object_removed", "subject": "flag"})]
