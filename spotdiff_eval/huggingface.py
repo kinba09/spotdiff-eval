@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import ssl
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -18,7 +19,20 @@ class DownloadError(RuntimeError):
 
 
 _DATASET_ID = re.compile(r"^[^/\s]+/[^/\s]+$")
-_USER_AGENT = "spotdiff-eval/0.2.0"
+_USER_AGENT = "spotdiff-eval/0.2.1"
+
+
+def _ssl_context() -> ssl.SSLContext:
+    """Build a verified TLS context for macOS and other Python installs."""
+
+    certificate_file = os.environ.get("SSL_CERT_FILE")
+    if certificate_file:
+        return ssl.create_default_context(cafile=certificate_file)
+    try:
+        import certifi
+    except ImportError:
+        return ssl.create_default_context()
+    return ssl.create_default_context(cafile=certifi.where())
 
 
 @dataclass(frozen=True)
@@ -47,7 +61,7 @@ def _headers(token: Optional[str]) -> Dict[str, str]:
 def _request_json(url: str, token: Optional[str]) -> Any:
     request = urllib.request.Request(url, headers=_headers(token), method="GET")
     try:
-        with urllib.request.urlopen(request, timeout=60) as response:
+        with urllib.request.urlopen(request, timeout=60, context=_ssl_context()) as response:
             return json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         if exc.code == 401 or exc.code == 403:
@@ -105,7 +119,7 @@ def _download_file(
     temporary = destination.with_name(destination.name + ".part")
     request = urllib.request.Request(url, headers=_headers(token), method="GET")
     try:
-        with urllib.request.urlopen(request, timeout=120) as response, temporary.open("wb") as handle:
+        with urllib.request.urlopen(request, timeout=120, context=_ssl_context()) as response, temporary.open("wb") as handle:
             while True:
                 chunk = response.read(1024 * 1024)
                 if not chunk:
