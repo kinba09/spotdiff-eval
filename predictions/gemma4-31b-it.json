@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "model": "gemma4-31b-it",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "sun_face",
+          "attribute": "expression",
+          "from": "smiling with open mouth",
+          "to": "smiling with closed mouth",
+          "description": "The sun's mouth is closed in the second panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "castle_flag",
+          "description": "The flag on top of the castle tower is missing in the second panel."
+        },
+        {
+          "kind": "object_added",
+          "subject": "cloud_small",
+          "description": "A small cloud is added to the right side of the sky in the second panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "tree_leaves",
+          "attribute": "pattern",
+          "from": "plain outlines",
+          "to": "containing small flowers",
+          "description": "The tree foliage now contains small flower shapes in the second panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "castle_roof",
+          "attribute": "pattern",
+          "from": "plain",
+          "to": "striped",
+          "description": "The roof of the castle tower has horizontal stripes in the second panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "castle_wall",
+          "attribute": "detail",
+          "from": "plain",
+          "to": "containing a small window",
+          "description": "A small square window is added to the castle wall in the second panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "castle_railing_dot",
+          "description": "A small circular detail on the castle railing is missing in the second panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "flowers_bottom",
+          "attribute": "shape",
+          "from": "round petals",
+          "to": "tulip-shaped petals",
+          "description": "The flowers at the bottom have changed from round to tulip shapes."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shirt",
+          "attribute": "pattern",
+          "from": "plain with a star",
+          "to": "horizontal stripes",
+          "description": "The boy's shirt has changed from a plain shirt with a star to a striped shirt."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shorts",
+          "attribute": "pattern",
+          "from": "plain",
+          "to": "horizontal stripes",
+          "description": "The boy's shorts now have horizontal stripes in the second panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "dog_toy",
+          "attribute": "color",
+          "from": "yellow",
+          "to": "orange",
+          "description": "The toy on the ground next to the dog changes from yellow to orange."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "birds",
+          "description": "Three small birds are visible in the sky on the right side of the second panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "differences": []
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "balcony_railing",
+          "description": "The railing on the upper balcony is missing in the second panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "balcony_base",
+          "description": "The structural base supporting the upper balcony is missing in the second panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "differences": []
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "purple_grape",
+          "description": "A single purple grape is added to the top right area of the image."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "top_left_blue_bead",
+          "attribute": "color",
+          "from": "blue",
+          "to": "green",
+          "description": "The small bead in the top left corner changes from blue to green."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "top_left_donut_sprinkles",
+          "attribute": "color",
+          "from": "green",
+          "to": "blue",
+          "description": "A green sprinkle on the top left donut is changed to blue."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "middle_donut_sprinkles",
+          "attribute": "color",
+          "from": "green",
+          "to": "blue",
+          "description": "A green sprinkle on the middle donut is changed to blue."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "bottom_left_pink_donut_sprinkles",
+          "attribute": "color",
+          "from": "green",
+          "to": "blue",
+          "description": "A green sprinkle on the bottom left pink donut is changed to blue."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "bottom_right_chocolate_donut_sprinkles",
+          "attribute": "color",
+          "from": "green",
+          "to": "blue",
+          "description": "A green sprinkle on the bottom right chocolate donut is changed to blue."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "striped_beach_umbrella",
+          "attribute": "color",
+          "from": "blue and white",
+          "to": "red and white",
+          "description": "The stripes on the beach umbrella change from blue and white to red and white."
+        }
+      ]
+    }
+  ]
+}

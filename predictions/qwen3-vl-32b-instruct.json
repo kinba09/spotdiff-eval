@@ -1,0 +1,299 @@
+{
+  "schema_version": "1.0",
+  "model": "qwen3-vl-32b-instruct",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "playground_flag",
+          "description": "The flag on top of the playground structure is present in the left panel but absent in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "playground_slide",
+          "attribute": "shape",
+          "from": "curved slide",
+          "to": "straight slide",
+          "description": "The slide on the playground is curved in the left panel but straight in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "playground_climbing_wall",
+          "attribute": "shape",
+          "from": "rectangular wall with circular holes",
+          "to": "triangular wall with circular holes",
+          "description": "The climbing wall on the playground is rectangular in the left panel but triangular in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shirt",
+          "attribute": "pattern",
+          "from": "solid shirt with star",
+          "to": "striped shirt",
+          "description": "The boy's shirt has a solid design with a star in the left panel but is striped in the right panel."
+        },
+        {
+          "kind": "object_added",
+          "subject": "tree_flowers",
+          "description": "Small flowers are added to the tree in the right panel, which are absent in the left panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "middle_flower",
+          "attribute": "shape",
+          "from": "five-petal flower",
+          "to": "tulip-shaped flower",
+          "description": "The middle flower in the foreground is a five-petal flower in the left panel but a tulip-shaped flower in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "sun",
+          "attribute": "rays",
+          "from": "seven rays",
+          "to": "eight rays",
+          "description": "The sun has seven rays in the left panel and eight rays in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "clouds",
+          "attribute": "count",
+          "from": "two clouds",
+          "to": "three clouds",
+          "description": "There are two clouds in the sky in the left panel and three clouds in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "playground_roof",
+          "attribute": "shape",
+          "from": "conical roof",
+          "to": "flat roof with dome",
+          "description": "The roof of the playground structure is conical in the left panel but flat with a dome on top in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_hair",
+          "attribute": "style",
+          "from": "smooth hair",
+          "to": "spiky hair",
+          "description": "The boy's hair is smooth in the left panel but has a spiky tuft on top in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "dog_toy",
+          "attribute": "color",
+          "from": "yellow",
+          "to": "red",
+          "description": "The toy on the ground next to the dog changes from yellow in the left panel to red in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "birds_in_sky",
+          "description": "Three small dark birds are visible in the sky on the right panel but absent in the left panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "yellow_flower_petals",
+          "description": "A cluster of yellow flower petals is present in the right panel but absent in the left panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "upper_left_sphere_window",
+          "attribute": "window_pattern",
+          "from": "three horizontal yellow bars",
+          "to": "two horizontal yellow bars",
+          "description": "The window pattern on the upper-left sphere of the Atomium changes from three horizontal yellow bars to two."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_left_sphere_window",
+          "attribute": "window_pattern",
+          "from": "two horizontal yellow bars",
+          "to": "three horizontal yellow bars",
+          "description": "The window pattern on the lower-left sphere of the Atomium changes from two horizontal yellow bars to three."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "middle_left_sphere_window",
+          "attribute": "window_pattern",
+          "from": "two horizontal yellow bars",
+          "to": "three horizontal yellow bars",
+          "description": "The window pattern on the middle-left sphere of the Atomium changes from two horizontal yellow bars to three."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "upper_right_sphere_window",
+          "attribute": "window_pattern",
+          "from": "three horizontal yellow bars",
+          "to": "two horizontal yellow bars",
+          "description": "The window pattern on the upper-right sphere of the Atomium changes from three horizontal yellow bars to two."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_right_sphere_window",
+          "attribute": "window_pattern",
+          "from": "two horizontal yellow bars",
+          "to": "three horizontal yellow bars",
+          "description": "The window pattern on the lower-right sphere of the Atomium changes from two horizontal yellow bars to three."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "pink_dress_child_face",
+          "attribute": "expression",
+          "from": "neutral",
+          "to": "smiling",
+          "description": "The child in the pink dress on the balcony changes from a neutral expression to a smiling expression."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "red_shirt_child_face",
+          "attribute": "expression",
+          "from": "neutral",
+          "to": "smiling",
+          "description": "The child in the red shirt sitting on the ledge changes from a neutral expression to a smiling expression."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "green_jacket_person_face",
+          "attribute": "expression",
+          "from": "neutral",
+          "to": "smiling",
+          "description": "The person in the green jacket standing on the ledge changes from a neutral expression to a smiling expression."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "green_jacket_person_hand",
+          "attribute": "visibility",
+          "from": "visible",
+          "to": "occluded",
+          "description": "The hand of the person wearing a green jacket is visible in the first panel but is occluded behind the orange pot in the second panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "top_right_grape",
+          "description": "A single dark grape is added in the top right area of the right panel, near the wooden board handle."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "cheese_knife_handle",
+          "attribute": "color",
+          "from": "light_wood",
+          "to": "dark_wood",
+          "description": "The handle of the cheese knife on the right side of the board changes from light wood to dark wood."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "wine_glass_in_bottom_left",
+          "attribute": "content_color",
+          "from": "red",
+          "to": "clear",
+          "description": "The wine glass in the bottom left corner changes from containing red liquid to being empty or containing clear liquid."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "top_left_blue_heart_shape",
+          "attribute": "color",
+          "from": "blue",
+          "to": "green",
+          "description": "The heart-shaped object in the top left corner changes from blue in the left panel to green in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "top_right_blue_heart_shape",
+          "attribute": "color",
+          "from": "blue",
+          "to": "green",
+          "description": "The heart-shaped object in the top right corner changes from blue in the left panel to green in the right panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "left_panel_small_blue_circular_object",
+          "description": "A small blue circular object located near the center-left of the left panel is absent in the right panel."
+        },
+        {
+          "kind": "object_added",
+          "subject": "right_panel_small_green_circular_object",
+          "description": "A small green circular object appears in the right panel near the center-left, where a blue object was in the left panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "bottom_right_purple_wavy_object",
+          "attribute": "color",
+          "from": "purple",
+          "to": "pink",
+          "description": "The wavy purple object in the bottom right corner changes to pink in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "top_left_donut",
+          "attribute": "sprinkles",
+          "from": "mixed_color_sprinkles",
+          "to": "green_and_orange_sprinkles",
+          "description": "The top-left pink donut has different sprinkles: in the left panel, it has mixed-color sprinkles, while in the right panel, it has mostly green and orange sprinkles."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "bottom_right_donut",
+          "attribute": "sprinkles",
+          "from": "mixed_color_sprinkles",
+          "to": "blue_and_yellow_sprinkles",
+          "description": "The bottom-right chocolate donut has different sprinkles: in the left panel, it has mixed-color sprinkles, while in the right panel, it has mostly blue and yellow sprinkles."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "striped_umbrella",
+          "attribute": "color_pattern",
+          "from": "blue_and_white_stripes",
+          "to": "red_and_white_stripes",
+          "description": "The large striped umbrella near the center of the beach changes from blue and white stripes to red and white stripes."
+        }
+      ]
+    }
+  ]
+}

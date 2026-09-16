@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "model": "llama4-scout-17b",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shirt",
+          "attribute": "pattern",
+          "from": "star",
+          "to": "stripes",
+          "description": "The boy's shirt pattern changed"
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shoe",
+          "attribute": "type",
+          "from": "sneakers with white socks",
+          "to": "sneakers with dark socks",
+          "description": "The boy's shoe type or sock changed"
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "tree_flowers",
+          "attribute": "presence",
+          "from": "no flowers",
+          "to": "with flowers",
+          "description": "The tree has flowers in the second panel"
+        },
+        {
+          "kind": "count_change",
+          "subject": "flowers",
+          "from": "three flowers",
+          "to": "two flowers",
+          "count": 2,
+          "description": "The number of flowers changed"
+        },
+        {
+          "kind": "object_added",
+          "subject": "tulip",
+          "description": "A tulip was added in the second panel"
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "dog_toy",
+          "attribute": "color",
+          "from": "yellow",
+          "to": "red",
+          "description": "The dog toy changed color from yellow to red."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "differences": [
+        {
+          "kind": "count_change",
+          "subject": "birds",
+          "from": "0",
+          "to": "4",
+          "description": "four birds are visible in the second panel where there were none in the first panel"
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "differences": []
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "dog",
+          "description": "the white dog is present in the top panel and absent in the bottom panel"
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "green_pot_plant",
+          "description": "a plant in a green pot is present in the right panel"
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "differences": []
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "differences": []
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "chocolate_donut",
+          "description": "a chocolate donut is present in the second panel"
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "blue_lounge_chair",
+          "description": "a blue lounge chair is present in the second panel but not the first"
+        }
+      ]
+    }
+  ]
+}
