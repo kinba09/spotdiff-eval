@@ -69,7 +69,7 @@ def build_parser() -> argparse.ArgumentParser:
     run.add_argument("--model", help="model name sent in the request")
     run.add_argument(
         "--protocol",
-        choices=["openai_compatible", "generic_json"],
+        choices=["openai_compatible", "generic_json", "gemini_native"],
         default="openai_compatible",
         help="request format expected by the endpoint",
     )

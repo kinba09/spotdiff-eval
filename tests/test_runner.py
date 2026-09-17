@@ -16,6 +16,18 @@ class RunnerTests(unittest.TestCase):
         self.assertEqual(content[1]["type"], "image_url")
         self.assertEqual(content[1]["image_url"]["url"], "data:image/png;base64,abc")
 
+    def test_gemini_native_payload_contains_inline_image(self):
+        payload = build_request_payload("data:image/png;base64,abc", "find differences", "test-model", "gemini_native")
+        parts = payload["contents"][0]["parts"]
+        self.assertEqual(parts[1]["inline_data"]["mime_type"], "image/png")
+        self.assertEqual(parts[1]["inline_data"]["data"], "abc")
+
+    def test_extracts_gemini_native_response(self):
+        result = extract_prediction_object(
+            {"candidates": [{"content": {"parts": [{"text": '{"differences": []}'}]}}]}
+        )
+        self.assertEqual(result, {"differences": []})
+
     def test_extracts_json_from_openai_style_response(self):
         response = {
             "choices": [

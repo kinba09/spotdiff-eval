@@ -62,6 +62,27 @@ def build_request_payload(
             payload["model"] = model
         return payload
 
+    if protocol == "gemini_native":
+        if not image_data_url.startswith("data:") or "," not in image_data_url:
+            raise RunError("Gemini native protocol requires a data URL image")
+        metadata, encoded = image_data_url.split(",", 1)
+        mime_type = metadata[5:].split(";", 1)[0]
+        return {
+            "contents": [
+                {
+                    "role": "user",
+                    "parts": [
+                        {"text": prompt},
+                        {"inline_data": {"mime_type": mime_type, "data": encoded}},
+                    ],
+                }
+            ],
+            "generationConfig": {
+                "temperature": 0,
+                "responseMimeType": "application/json",
+            },
+        }
+
     raise RunError(f"unsupported protocol '{protocol}'")
 
 
@@ -128,6 +149,21 @@ def extract_prediction_object(response: Any) -> Dict[str, Any]:
     if isinstance(response.get("differences"), list):
         return response
 
+    candidates = response.get("candidates")
+    if isinstance(candidates, list) and candidates:
+        candidate = candidates[0]
+        if isinstance(candidate, dict):
+            content = candidate.get("content")
+            parts = content.get("parts") if isinstance(content, dict) else None
+            if isinstance(parts, list):
+                text = "\n".join(
+                    part["text"]
+                    for part in parts
+                    if isinstance(part, dict) and isinstance(part.get("text"), str)
+                )
+                if text:
+                    return extract_prediction_object(_json_from_text(text))
+
     choices = response.get("choices")
     if isinstance(choices, list) and choices:
         choice = choices[0]
@@ -178,9 +214,14 @@ def run_manifest(
         if not image_path.exists():
             raise RunError(f"image not found for {raw_item['item_id']}: {image_path}")
 
+        request_endpoint = endpoint
+        if protocol == "gemini_native":
+            if not model:
+                raise RunError("Gemini native protocol requires --model")
+            request_endpoint = endpoint.replace("{model}", model)
         payload = build_request_payload(image_as_data_url(image_path), prompt, model, protocol)
         response = call_endpoint(
-            endpoint,
+            request_endpoint,
             payload,
             token=token,
             token_header=token_header,

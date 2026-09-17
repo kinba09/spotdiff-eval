@@ -156,6 +156,24 @@ spotdiff run \
   --output predictions/my-model.json
 ```
 
+For Google's native Gemini API, use `gemini_native` with an endpoint template
+and a token header. The model receives only the composite image and prompt;
+annotations are used later by the local scorer.
+
+```bash
+export SPOTDIFF_API_TOKEN="your-token"
+
+spotdiff run \
+  --endpoint https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent \
+  --model gemini-3.1-flash-lite \
+  --protocol gemini_native \
+  --token-header x-goog-api-key \
+  --token-prefix "" \
+  --timeout 600 \
+  --manifest data/manifest.json \
+  --output predictions/my-model.json
+```
+
 Use `--limit 1` to test one image before running the full dataset. The API
 token is read from an environment variable and is never written to output.
 

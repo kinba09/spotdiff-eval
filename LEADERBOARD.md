@@ -31,6 +31,7 @@ python3 -m spotdiff_eval.cli evaluate \
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
 | Perfect baseline | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0.2.0 |
 | qwen3-vl-32b-instruct ([predictions](predictions/qwen3-vl-32b-instruct.json)) | 30.1% | 3.3% | 24.6% | 45.5% | 26.7% | 0.2.2 |
+| gemini-3.1-flash-lite ([predictions](predictions/gemini-3.1-flash-lite.json)) | 32.8% | 4.9% | 19.7% | 57.1% | 44.4% | 0.2.2 |
 | gemma4-31b-it ([predictions](predictions/gemma4-31b-it.json)) | 25.5% | 4.9% | 13.1% | 38.1% | 54.2% | 0.2.2 |
 | llama4-scout-17b ([predictions](predictions/llama4-scout-17b.json)) | 14.0% | 0.0% | 3.3% | 18.2% | 50.0% | 0.2.2 |
 

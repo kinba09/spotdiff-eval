@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "model": "gemini-3.1-flash-lite",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "playground_tower_top",
+          "attribute": "shape",
+          "from": "flag",
+          "to": "ball_finial",
+          "description": "The top of the playground tower has a flag in the first panel and a ball finial in the second panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "playground_tower_base",
+          "attribute": "shape",
+          "from": "circle_window",
+          "to": "arch_window",
+          "description": "The window at the base of the playground tower is circular in the first panel and arched in the second panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "tree_foliage",
+          "attribute": "markings",
+          "from": "plain",
+          "to": "flower_patterns",
+          "description": "The tree foliage has flower patterns in the second panel that are absent in the first panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shirt",
+          "attribute": "pattern",
+          "from": "star",
+          "to": "stripes",
+          "description": "The boy's shirt has a star pattern in the first panel and horizontal stripes in the second panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "flower_right",
+          "attribute": "shape",
+          "from": "round_flower",
+          "to": "tulip",
+          "description": "The flower on the right side of the ground is a round flower in the first panel and a tulip in the second panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "dog_toy",
+          "attribute": "color",
+          "from": "yellow",
+          "to": "red",
+          "description": "The dog toy on the ground near the dog's feet changes from yellow in the left panel to red in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "small_cactus_left",
+          "description": "The small cactus on the far left is present in the first panel but absent in the second panel."
+        },
+        {
+          "kind": "object_added",
+          "subject": "birds_in_sky",
+          "description": "Three birds are visible in the sky to the right of the large cactus in the second panel, but are absent in the first panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "butterfly_wing_pattern",
+          "attribute": "spot_pattern",
+          "from": "more_spots",
+          "to": "fewer_spots",
+          "description": "The butterfly inside the net has a different pattern of spots on its wings."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "cat_ears",
+          "attribute": "color",
+          "from": "white",
+          "to": "black",
+          "description": "The cat's ears are white in the top panel and black in the bottom panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "green_jacket_person_shirt",
+          "attribute": "color",
+          "from": "green",
+          "to": "black",
+          "description": "The person in the green jacket is wearing a green shirt in the top panel and a black shirt in the bottom panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "upper_planter_flowers",
+          "attribute": "color",
+          "from": "orange",
+          "to": "green",
+          "description": "The flowers in the upper planter are orange in the left panel and green in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "grape_near_corkscrew",
+          "description": "A single grape has been added near the corkscrew handle in the top right area of the board."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "cheese_knife_handle",
+          "attribute": "color",
+          "from": "light_wood",
+          "to": "dark_wood",
+          "description": "The handle of the cheese knife on the right side of the board is darker in the second panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "wine_glass_bottom_right",
+          "attribute": "color",
+          "from": "red_wine",
+          "to": "white_wine",
+          "description": "The wine glass at the bottom right of the board contains white wine instead of red wine."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "top_left_yellow_bead",
+          "attribute": "color",
+          "from": "yellow",
+          "to": "green",
+          "description": "The small bead near the top left corner changes from yellow to green."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "bottom_left_green_bead",
+          "attribute": "color",
+          "from": "green",
+          "to": "yellow",
+          "description": "The small bead near the bottom left corner changes from green to yellow."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "sprinkle_near_spoon",
+          "description": "A small blue sprinkle located to the right of the measuring spoon is missing in the right panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "sprinkle_near_top_donut",
+          "description": "A small yellow sprinkle located above the top-left pink donut is missing in the right panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "sprinkle_near_bottom_left_donut",
+          "description": "A small green sprinkle located near the bottom-left edge of the bottom-left pink donut is missing in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "beach_umbrella",
+          "attribute": "pattern",
+          "from": "blue and white striped",
+          "to": "brown and white striped",
+          "description": "The large beach umbrella on the right side of the beach has changed from blue and white stripes to brown and white stripes."
+        }
+      ]
+    }
+  ]
+}
