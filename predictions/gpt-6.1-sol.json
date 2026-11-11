@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0",
+  "model": "gpt-6.1-sol",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "playground_flag",
+          "description": "The flag above the playground roof is absent in the right panel."
+        },
+        {
+          "kind": "count_change",
+          "subject": "sun_rays",
+          "from": "12",
+          "to": "19",
+          "count": 19,
+          "description": "The sun has twelve rays on the left and nineteen on the right."
+        },
+        {
+          "kind": "count_change",
+          "subject": "sky_clouds",
+          "from": "2",
+          "to": "3",
+          "count": 3,
+          "description": "There are two clouds on the left and three on the right."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "tree_canopy",
+          "attribute": "markings",
+          "from": "curved foliage marks",
+          "to": "four flower shapes",
+          "description": "The tree canopy's curved interior marks are replaced by four flowers."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "leftmost_fence_post",
+          "attribute": "top_shape",
+          "from": "rounded",
+          "to": "pointed",
+          "description": "The leftmost fence post has a pointed top in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "playground_lower_window",
+          "attribute": "shape",
+          "from": "circular",
+          "to": "arched",
+          "description": "The lower tower window changes from a circle to an arch."
+        },
+        {
+          "kind": "count_change",
+          "subject": "climbing_wall_holds",
+          "from": "4",
+          "to": "5",
+          "count": 5,
+          "description": "The climbing wall has four holds on the left and five on the right."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "rocking_horse_tail",
+          "attribute": "shape",
+          "from": "single upward curl",
+          "to": "double curled outline",
+          "description": "The rocking horse has a differently curled tail on the right."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shirt",
+          "attribute": "markings",
+          "from": "star",
+          "to": "horizontal stripes",
+          "description": "The boy's shirt changes from a star to horizontal stripes."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "middle_garden_flower",
+          "attribute": "blossom_shape",
+          "from": "round multi-petaled flower",
+          "to": "tulip",
+          "description": "The middle flower becomes a tulip in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "dog_toy",
+          "attribute": "color",
+          "from": "yellow",
+          "to": "red",
+          "description": "The toy beside the dog's paw changes from yellow to red."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "skyline_building",
+          "attribute": "height",
+          "from": "shorter",
+          "to": "taller",
+          "description": "The blue rectangular building left of the tall central tower is taller in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "small_left_foreground_cactus",
+          "description": "The small cactus at the far left foreground is absent in the right panel."
+        },
+        {
+          "kind": "object_added",
+          "subject": "sky_birds",
+          "count": 3,
+          "description": "Three birds appear in the upper-right sky in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "large_right_cactus",
+          "attribute": "ridges",
+          "from": "many narrow ridges",
+          "to": "fewer wider ridges",
+          "description": "The large cactus on the right has fewer, broader vertical ridges in the second panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "lower_left_flower",
+          "attribute": "color",
+          "from": "orange",
+          "to": "yellow",
+          "description": "The flower beside the lower-left edge of the net changes from orange to yellow."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "brown_seed_pod_below_net",
+          "attribute": "orientation",
+          "from": "rounded end toward upper left",
+          "to": "rounded end toward lower right",
+          "description": "The brown seed pod below the net points in the opposite direction."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "top_atomium_sphere_left_window",
+          "description": "The left window on the uppermost Atomium sphere is absent in the bottom panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "left_atomium_sphere_left_window",
+          "description": "The far-left window on the large left Atomium sphere is absent in the bottom panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "uppermost_red_brick",
+          "attribute": "width",
+          "from": "extends left beyond the brick column",
+          "to": "aligned with the brick column",
+          "description": "The topmost red brick is shorter in the bottom panel."
+        },
+        {
+          "kind": "count_change",
+          "subject": "fourth_red_brick_row",
+          "from": "2",
+          "to": "1",
+          "count": 1,
+          "description": "The fourth brick row from the top changes from two bricks to one wide brick."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "red_facade_insets",
+          "attribute": "arrangement",
+          "from": "short left and right insets with a central bar",
+          "to": "left inset with a longer bar extending right",
+          "description": "The narrow red decorative bar extends to the right edge, replacing the separate right inset."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "green_jacket_person_hand",
+          "attribute": "occlusion",
+          "from": "fully visible beside the brick wall",
+          "to": "partly hidden behind the brick wall",
+          "description": "The green-jacketed person's right hand is partly hidden behind the brick wall in the bottom panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "upper_window_older_person_hand",
+          "attribute": "occlusion",
+          "from": "visible beside the left curtain",
+          "to": "hidden behind the left curtain",
+          "description": "The older person's hand at the left curtain is hidden in the bottom panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "red_shirt_child_shoe",
+          "attribute": "occlusion",
+          "from": "rear shoe visible above the orange slab",
+          "to": "rear shoe hidden behind the orange slab",
+          "description": "One shoe of the red-shirted child is hidden behind the orange slab in the bottom panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "upper_flower_cluster",
+          "description": "The orange flower cluster in the raised planter is absent in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "cutting_board_handle_hole",
+          "description": "The circular hole in the cutting-board handle is absent in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "cheese_knife_handle",
+          "attribute": "color",
+          "from": "orange-brown",
+          "to": "dark brown",
+          "description": "The horizontal cheese knife's handle becomes dark brown in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_left_wine",
+          "attribute": "color",
+          "from": "red",
+          "to": "pale yellow",
+          "description": "The lower-left wine glass contains pale yellow wine instead of red wine."
+        },
+        {
+          "kind": "object_added",
+          "subject": "upper_single_grape",
+          "description": "A single grape appears above the cutting board in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "upper_herb_sprig",
+          "attribute": "length",
+          "from": "shorter",
+          "to": "longer",
+          "description": "The thin herb sprig above the board is longer in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "upper_bear_shaped_object",
+          "attribute": "color",
+          "from": "blue",
+          "to": "green",
+          "description": "The bear-shaped object near the top changes from blue to green."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "crescent_shaped_object",
+          "attribute": "orientation",
+          "from": "opening toward upper left",
+          "to": "opening toward upper right",
+          "description": "The white crescent faces the opposite direction in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "top_left_yellow_sprinkle",
+          "description": "The loose yellow sprinkle beside the lower-left edge of the top-left pink donut is absent in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "wooden_scoop_handle",
+          "attribute": "text",
+          "from": "small printed lettering",
+          "to": "no lettering",
+          "description": "The printed lettering on the wooden scoop handle is absent in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_right_donut_sprinkles",
+          "attribute": "color",
+          "from": "green",
+          "to": "blue",
+          "description": "The green sprinkles on the lower-right chocolate donut become blue."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "distant_island",
+          "description": "An additional island appears at the far-right horizon in the right panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "middle_closed_beach_umbrella",
+          "description": "The narrow closed umbrella near the middle of the beach is absent in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "striped_beach_umbrella",
+          "attribute": "stripe_color",
+          "from": "blue",
+          "to": "brown",
+          "description": "The open striped umbrella changes from blue-and-white to brown-and-white."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "left_middle_lounge_chair",
+          "attribute": "color",
+          "from": "orange",
+          "to": "yellow",
+          "description": "The lounge chair left of center changes from orange to yellow."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "schema_version": "1.0",
+  "model": "gpt-6-astra",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {
+          "kind": "count_change",
+          "subject": "sun_rays",
+          "from": "12",
+          "to": "19",
+          "count": 7,
+          "description": "The sun has twelve rays in the left panel and nineteen in the right panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "playground_flag",
+          "description": "The waving flag above the playground roof is absent in the right panel."
+        },
+        {
+          "kind": "count_change",
+          "subject": "sky_clouds",
+          "from": "2",
+          "to": "3",
+          "count": 1,
+          "description": "There are two clouds in the left panel and three in the right panel."
+        },
+        {
+          "kind": "object_added",
+          "subject": "tree_flowers",
+          "description": "Four flower shapes appear in the tree canopy in the right panel.",
+          "count": 4
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "left_fence_picket",
+          "attribute": "top_shape",
+          "from": "rounded",
+          "to": "pointed",
+          "description": "The leftmost fence picket changes from a rounded top to a pointed top."
+        },
+        {
+          "kind": "count_change",
+          "subject": "playground_railing_bars",
+          "from": "5",
+          "to": "4",
+          "count": 1,
+          "description": "The railing above the climbing wall has five internal vertical bars on the left and four on the right."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_playground_window",
+          "attribute": "shape",
+          "from": "circular",
+          "to": "arched",
+          "description": "The lower playground opening changes from a circle to an arched opening."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "rocking_horse_tail",
+          "attribute": "marking",
+          "from": "no inner contour line",
+          "to": "inner contour line",
+          "description": "An inner curved line appears inside the rocking horse tail."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "center_flower",
+          "attribute": "flower_shape",
+          "from": "round daisy",
+          "to": "tulip",
+          "description": "The middle flower changes from a round daisy to a tulip."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shirt",
+          "attribute": "pattern",
+          "from": "star",
+          "to": "horizontal stripes",
+          "description": "The boy shirt changes from a star design to horizontal stripes."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "skyline_building",
+          "attribute": "height",
+          "from": "shorter",
+          "to": "taller",
+          "description": "The pale blue rectangular building left of the tallest tower is taller in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "dog_toy",
+          "attribute": "color",
+          "from": "yellow",
+          "to": "red",
+          "description": "The toy beside the dog changes from yellow to red."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "small_left_cactus",
+          "description": "The small cactus at the far left foreground is absent from the right panel."
+        },
+        {
+          "kind": "object_added",
+          "subject": "sky_birds",
+          "description": "Three birds appear in the sky to the right of the tallest cactus.",
+          "count": 3
+        },
+        {
+          "kind": "object_added",
+          "subject": "small_sky_cloud",
+          "description": "A small isolated white cloud appears to the left of the tallest cactus."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "middle_cactus_right_arm",
+          "attribute": "height",
+          "from": "shorter",
+          "to": "taller",
+          "description": "The right arm of the middle branched cactus extends higher in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "upper_left_flower_sprig",
+          "description": "The small flower sprig above and to the right of the upper-left flower cluster is absent in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_left_flower",
+          "attribute": "color",
+          "from": "orange",
+          "to": "yellow",
+          "description": "The flower entering from the lower-left edge changes from orange to yellow."
+        },
+        {
+          "kind": "object_added",
+          "subject": "lower_right_flower_sprig",
+          "description": "A separate small flower sprig appears near the lower-right corner."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "curled_brown_petal",
+          "attribute": "orientation",
+          "from": "curled end toward upper left",
+          "to": "curled end toward lower right",
+          "description": "The brown curled petal below the net reverses orientation."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "upper_atomium_sphere_left_window",
+          "description": "The leftmost window on the uppermost Atomium sphere is absent in the bottom panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "left_atomium_sphere_left_window",
+          "description": "The leftmost window on the large left Atomium sphere is absent in the bottom panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "top_wall_brick",
+          "attribute": "width",
+          "from": "extends left beyond the brick column",
+          "to": "aligned with the brick column",
+          "description": "The top red brick no longer protrudes to the left of the brick column."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "upper_wall_vertical_mortar_line",
+          "description": "A vertical yellow mortar line in the upper brick column is absent, joining two red bricks into one."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "right_facade_decoration",
+          "attribute": "shape",
+          "from": "right red square and shorter horizontal red rectangle",
+          "to": "long horizontal red rectangle",
+          "description": "The right red square beneath the balcony is replaced by an extension of the horizontal red rectangle."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "orange_shirt_woman_hand",
+          "attribute": "occlusion",
+          "from": "left hand and forearm visible beside the curtain",
+          "to": "left hand and forearm hidden behind the curtain",
+          "description": "The gray-haired woman left hand and forearm are hidden behind the curtain in the bottom panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "green_jacket_person_hand",
+          "attribute": "occlusion",
+          "from": "right hand fully visible",
+          "to": "right hand partly hidden behind the building",
+          "description": "Part of the green-jacket person right hand is hidden by the building in the bottom panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "red_shirt_child_shoe",
+          "attribute": "occlusion",
+          "from": "rear shoe visible beside the orange slab",
+          "to": "rear shoe hidden behind the orange slab",
+          "description": "The red-shirt child rear shoe is hidden behind the orange slab in the bottom panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "upper_flower_cluster",
+          "description": "The orange flowers in the upper planter are absent in the right panel."
+        },
+        {
+          "kind": "object_added",
+          "subject": "right_planter_seedling",
+          "description": "An extra seedling appears toward the right end of the large rectangular planter."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "bench_leg",
+          "attribute": "color",
+          "from": "red",
+          "to": "green",
+          "description": "The slanting bench leg at the lower left changes from red to green."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "garden_trowel_handle",
+          "attribute": "ridges",
+          "from": "fewer widely spaced ridges",
+          "to": "more closely spaced ridges",
+          "description": "The wooden trowel handle at the bottom has more closely spaced ridges in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "cutting_board_handle",
+          "attribute": "hole",
+          "from": "round hole",
+          "to": "solid wood",
+          "description": "The round hanging hole in the cutting board handle disappears."
+        },
+        {
+          "kind": "object_added",
+          "subject": "upper_grape",
+          "description": "A single grape appears above the board near its handle."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "cheese_knife_handle",
+          "attribute": "color",
+          "from": "orange brown",
+          "to": "dark gray brown",
+          "description": "The horizontal cheese knife handle changes from orange brown to dark gray brown."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_left_wine",
+          "attribute": "color",
+          "from": "pink red",
+          "to": "pale yellow",
+          "description": "The wine in the lower-left glass changes from pink red to pale yellow."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "loose_almond",
+          "description": "The loose almond beside the white cheese wedge is absent in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "upper_bear_shape",
+          "attribute": "color",
+          "from": "blue",
+          "to": "green",
+          "description": "The bear-shaped piece near the top changes from blue to green."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "crescent_shaped_object",
+          "attribute": "orientation",
+          "from": "opens left",
+          "to": "opens right",
+          "description": "The pale blue crescent changes from opening left to opening right."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "small_yellow_bead",
+          "description": "One of the two small yellow beads below the scissors is absent in the right panel."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "long_blue_needle",
+          "description": "The long thin blue needle beside the lower blue tape roll is absent in the right panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "top_left_yellow_sprinkle",
+          "description": "The loose yellow sprinkle just below and to the left of the upper-left doughnut is absent in the right panel."
+        },
+        {
+          "kind": "object_added",
+          "subject": "upper_right_red_sprinkle",
+          "description": "A red sprinkle appears on the empty surface above and to the right of the wooden scoop."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "wooden_scoop_handle",
+          "attribute": "text",
+          "from": "printed text",
+          "to": "no text",
+          "description": "The printed text on the wooden scoop handle disappears."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "bottom_right_donut_sprinkles",
+          "attribute": "color",
+          "from": "green",
+          "to": "blue",
+          "description": "The green sprinkles on the lower-right chocolate doughnut change to blue."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "middle_closed_beach_umbrella",
+          "description": "The slender closed beach umbrella near the middle of the beach is absent in the right panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "striped_beach_umbrella",
+          "attribute": "stripe_color",
+          "from": "blue",
+          "to": "brown",
+          "description": "The large striped beach umbrella changes from blue stripes to brown stripes."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "upper_left_lounge_chair",
+          "attribute": "color",
+          "from": "orange",
+          "to": "yellow",
+          "description": "The upper-left lounge chair changes from orange to yellow."
+        },
+        {
+          "kind": "object_added",
+          "subject": "distant_island",
+          "description": "An additional distant island appears at the far right of the horizon."
+        }
+      ]
+    }
+  ]
+}

@@ -39,6 +39,9 @@ archive below and use a different formula.
 | Model | **Overall score [F1]** | Differences found [Recall] | Correct answers [Precision] | Correct / expected | Evaluator |
 | --- | ---: | ---: | ---: | ---: | --- |
 | Perfect fixture (annotation oracle) | **100.0%** | 100.0% | 100.0% | 61 / 61 | 0.3.0 |
+| GPT-6 Astra, Codex subagent ([predictions](predictions/gpt-6-astra.json)) | **27.3%** | 24.6% | 30.6% | 15 / 61 | 0.3.0 |
+| GPT-6.1 Terra, Codex subagent ([predictions](predictions/gpt-6.1-terra.json)) | **25.5%** | 19.7% | 36.4% | 12 / 61 | 0.3.0 |
+| GPT-6.1 Sol, Codex subagent ([predictions](predictions/gpt-6.1-sol.json)) | **19.8%** | 16.4% | 25.0% | 10 / 61 | 0.3.0 |
 | GPT-6 Luna, Codex subagent ([predictions](predictions/gpt-6-luna.json)) | **16.7%** | 9.8% | 54.5% | 6 / 61 | 0.3.0 |
 | gemini-3.1-flash-lite ([predictions](predictions/gemini-3.1-flash-lite.json)) | **7.3%** | 4.9% | 14.3% | 3 / 61 | 0.3.0 |
 | gemma4-31b-it ([predictions](predictions/gemma4-31b-it.json)) | **4.9%** | 3.3% | 9.5% | 2 / 61 | 0.3.0 |
@@ -49,6 +52,20 @@ archive below and use a different formula.
   described completely and correctly.
 - **Correct answers [Precision]:** how many reported differences were
   completely correct.
+
+### GPT-6.1 Sol, GPT-6.1 Terra, and GPT-6 Astra run details
+
+Each model ran as an independent Codex subagent, visually inspected all ten
+composite images, and used the built-in `spotdiff_eval/prompts/spotdiff_v1.txt`
+prompt. The subagents did not access annotations or other model predictions.
+
+| Model identifier | Evaluator | Evaluation command |
+| --- | --- | --- |
+| `gpt-6.1-sol` | 0.3.0 | `python3 -m spotdiff_eval.cli evaluate --manifest data/manifest.json --predictions predictions/gpt-6.1-sol.json --output results/gpt-6.1-sol.json` |
+| `gpt-6.1-terra` | 0.3.0 | `python3 -m spotdiff_eval.cli evaluate --manifest data/manifest.json --predictions predictions/gpt-6.1-terra.json --output results/gpt-6.1-terra.json` |
+| `gpt-6-astra` | 0.3.0 | `python3 -m spotdiff_eval.cli evaluate --manifest data/manifest.json --predictions predictions/gpt-6-astra.json --output results/gpt-6-astra.json` |
+
+Hardware is not applicable; these are hosted Codex models.
 
 ## Archived weighted results (before 0.3.0)
 

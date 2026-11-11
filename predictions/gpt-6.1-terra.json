@@ -1,0 +1,272 @@
+{
+  "schema_version": "1.0",
+  "model": "gpt-6.1-terra",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "playground_flag",
+          "description": "The flag on top of the playground roof is absent."
+        },
+        {
+          "kind": "object_added",
+          "subject": "playground_roof_ball",
+          "description": "A round finial appears on top of the roof."
+        },
+        {
+          "kind": "object_added",
+          "subject": "tree_flowers",
+          "description": "Flowers appear in the tree canopy."
+        },
+        {
+          "kind": "object_added",
+          "subject": "right_cloud",
+          "description": "A small extra cloud appears at the right."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "tower_lower_window",
+          "attribute": "shape",
+          "from": "round",
+          "to": "arched",
+          "description": "The lower tower window changes from round to arched."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "middle_flower",
+          "attribute": "shape",
+          "from": "round petals",
+          "to": "tulip shape",
+          "description": "The middle flower changes to a tulip shape."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shirt",
+          "attribute": "marking",
+          "from": "star",
+          "to": "horizontal stripes",
+          "description": "The star on the boy’s shirt changes to horizontal stripes."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "spring_horse_tail",
+          "attribute": "shape",
+          "from": "plain curved",
+          "to": "curled",
+          "description": "The spring horse’s tail becomes curled."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "left_fence_post",
+          "attribute": "top shape",
+          "from": "rounded",
+          "to": "pointed",
+          "description": "The leftmost fence post has a pointed rather than rounded top."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "skyline_building",
+          "description": "The narrow dark building near the right side of the skyline is absent."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "dog_toy",
+          "attribute": "color",
+          "from": "yellow",
+          "to": "red",
+          "description": "The toy beside the dog changes from yellow to red."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "small_left_cactus",
+          "description": "The small cactus in the lower left foreground is absent."
+        },
+        {
+          "kind": "object_added",
+          "subject": "sky_birds",
+          "description": "Birds appear in the sky to the right of the tall cactus."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "left_flower",
+          "attribute": "color",
+          "from": "orange",
+          "to": "yellow",
+          "description": "The flower at the left edge changes from orange to yellow."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_floating_petal",
+          "attribute": "orientation",
+          "from": "pointing right",
+          "to": "pointing left",
+          "description": "The floating petal below the net points in the opposite direction."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "upper_atomium_window",
+          "description": "A window on the left side of the top sphere is absent."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "left_atomium_window",
+          "description": "A window on the left side of the left sphere is absent."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "green_jacket_person_hand",
+          "attribute": "occlusion",
+          "from": "visible beside building",
+          "to": "partly hidden behind building",
+          "description": "The green jacket person’s right hand is partly hidden by the building."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "red_shirt_child_shoe",
+          "attribute": "occlusion",
+          "from": "visible in front of slab",
+          "to": "partly hidden behind slab",
+          "description": "The red shirt child’s shoe is partly hidden behind the orange slab."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "upper_woman_hand",
+          "attribute": "occlusion",
+          "from": "visible beside curtain",
+          "to": "hidden behind curtain",
+          "description": "The upper woman’s left hand is hidden by the curtain."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "upper_flower_cluster",
+          "description": "The orange flowers in the upper planter are absent."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "cutting_board_handle_hole",
+          "description": "The hole in the cutting board handle is absent."
+        },
+        {
+          "kind": "object_added",
+          "subject": "upper_grape",
+          "description": "A loose grape appears above the board."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "cheese_knife_handle",
+          "attribute": "color",
+          "from": "light brown",
+          "to": "dark brown",
+          "description": "The cheese knife handle changes from light to dark brown."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_left_wine",
+          "attribute": "color",
+          "from": "red",
+          "to": "white",
+          "description": "The lower left glass of wine changes from red to pale yellow."
+        },
+        {
+          "kind": "object_removed",
+          "subject": "loose_almond",
+          "description": "The loose almond beside the board is absent."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "top_bear_charm",
+          "attribute": "color",
+          "from": "blue",
+          "to": "green",
+          "description": "The bear charm at the top changes from blue to green."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "scoop_handle_text",
+          "description": "The text on the sprinkle scoop handle is absent."
+        },
+        {
+          "kind": "object_added",
+          "subject": "upper_red_sprinkles",
+          "description": "Red sprinkles appear above the scoop."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "lower_right_donut_sprinkles",
+          "attribute": "color",
+          "from": "mostly green and red",
+          "to": "including many blue",
+          "description": "The sprinkles on the lower right chocolate donut include more blue."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "distant_island",
+          "description": "An island appears at the far right of the horizon."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "striped_beach_umbrella",
+          "attribute": "color",
+          "from": "blue and white",
+          "to": "brown and white",
+          "description": "The striped umbrella changes from blue and white to brown and white."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "beach_chairs",
+          "attribute": "color",
+          "from": "orange",
+          "to": "yellow",
+          "description": "The orange chairs on the left side of the beach change to yellow."
+        }
+      ]
+    }
+  ]
+}
