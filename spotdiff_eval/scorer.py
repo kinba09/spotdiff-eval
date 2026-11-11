@@ -1,4 +1,4 @@
-"""Deterministic matching and weighted scoring for SpotDiff predictions."""
+"""Deterministic matching and strict F1 scoring for SpotDiff predictions."""
 
 from __future__ import annotations
 
@@ -6,38 +6,39 @@ import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Set, Tuple
 
+from . import __version__
 from .schema import Difference, PredictionItem, load_annotation_differences, load_json, load_predictions
 
 
-WEIGHTS = {
-    "recall": 0.60,
-    "precision": 0.25,
-    "attribute_accuracy": 0.15,
-}
 MATCH_THRESHOLD = 0.40
 
 _STOP_WORDS = {
     "a", "an", "and", "are", "at", "be", "by", "from", "in", "is", "near", "of", "on",
-    "one", "the", "to", "with", "left", "right", "panel", "area", "side",
+    "the", "to", "with", "panel", "area", "side",
 }
+_FIELD_STOP_WORDS = {"a", "an", "the", "and"}
 
 
-def _tokens(value: Optional[str]) -> Set[str]:
+def _token_sequence(value: Optional[str], stop_words: Set[str] = _STOP_WORDS) -> Tuple[str, ...]:
     if not value:
-        return set()
+        return ()
     raw_tokens = re.findall(r"[a-z0-9]+", value.lower().replace("&", " and "))
-    normalized = set()
+    normalized = []
     for token in raw_tokens:
-        if token in _STOP_WORDS:
+        if token in stop_words:
             continue
         if token.endswith("ies") and len(token) > 4:
             token = token[:-3] + "y"
         elif token.endswith("s") and not token.endswith("ss") and len(token) > 3:
             token = token[:-1]
-        normalized.add(token)
-    return normalized
+        normalized.append(token)
+    return tuple(normalized)
+
+
+def _tokens(value: Optional[str]) -> Set[str]:
+    return set(_token_sequence(value))
 
 
 def _similarity(left: Optional[str], right: Optional[str]) -> float:
@@ -54,12 +55,23 @@ def _similarity(left: Optional[str], right: Optional[str]) -> float:
 def _field_correct(predicted: Optional[str], expected: Optional[str]) -> bool:
     if expected is None:
         return True
-    return _similarity(predicted, expected) >= 0.80
+    # Required details must agree after basic formatting/plural normalization.
+    # Fuzzy overlap can accept negation, reversed relations, or wrong numbers.
+    expected_tokens = _token_sequence(expected, _FIELD_STOP_WORDS)
+    return bool(expected_tokens) and _token_sequence(predicted, _FIELD_STOP_WORDS) == expected_tokens
 
 
 def _candidate_score(predicted: Difference, expected: Difference) -> Optional[float]:
     if predicted.kind != expected.kind:
         return None
+
+    predicted_tokens = _tokens(predicted.subject)
+    expected_tokens = _tokens(expected.subject)
+    for opposites in ({"left", "right"}, {"top", "bottom"}, {"upper", "lower"}):
+        predicted_location = predicted_tokens & opposites
+        expected_location = expected_tokens & opposites
+        if predicted_location and expected_location and predicted_location.isdisjoint(expected_location):
+            return None
 
     subject_score = _similarity(predicted.subject, expected.subject)
     description_score = _similarity(predicted.description, expected.description)
@@ -110,34 +122,51 @@ class Match:
     attribute_accuracy: float
 
 
-def match_differences(predicted: Sequence[Difference], expected: Sequence[Difference]) -> Tuple[List[Match], List[int], List[int]]:
-    candidates: List[Tuple[float, int, int]] = []
+def match_differences(
+    predicted: Sequence[Difference],
+    expected: Sequence[Difference],
+    *,
+    require_full_attributes: bool = False,
+) -> Tuple[List[Match], List[int], List[int]]:
+    """Maximize eligible one-to-one matches; partial matches are diagnostic only."""
+    candidates: Dict[int, List[Match]] = {}
     for predicted_index, predicted_difference in enumerate(predicted):
         for expected_index, expected_difference in enumerate(expected):
             score = _candidate_score(predicted_difference, expected_difference)
             if score is not None and score >= MATCH_THRESHOLD:
-                candidates.append((score, predicted_index, expected_index))
+                accuracy = _attribute_accuracy(predicted_difference, expected_difference)
+                if require_full_attributes and accuracy != 1.0:
+                    continue
+                candidates.setdefault(predicted_index, []).append(
+                    Match(predicted_index, expected_index, score, accuracy)
+                )
 
-    # Greedy maximum-weight one-to-one matching is deterministic for this small benchmark.
-    candidates.sort(key=lambda candidate: (-candidate[0], candidate[1], candidate[2]))
-    used_predicted: Set[int] = set()
-    used_expected: Set[int] = set()
-    matches: List[Match] = []
-    for score, predicted_index, expected_index in candidates:
-        if predicted_index in used_predicted or expected_index in used_expected:
-            continue
-        used_predicted.add(predicted_index)
-        used_expected.add(expected_index)
-        matches.append(
-            Match(
-                predicted_index=predicted_index,
-                expected_index=expected_index,
-                match_score=round(score, 4),
-                attribute_accuracy=round(_attribute_accuracy(predicted[predicted_index], expected[expected_index]), 4),
-            )
-        )
+    for choices in candidates.values():
+        choices.sort(key=lambda match: (-match.match_score, match.expected_index))
 
+    # Augmenting paths maximize match count, which is the strict F1 objective.
+    # A single high-overlap candidate must not block two valid matches.
+    assigned: Dict[int, Match] = {}
+
+    def assign(predicted_index: int, visited: Set[int]) -> bool:
+        for candidate in candidates.get(predicted_index, []):
+            expected_index = candidate.expected_index
+            if expected_index in visited:
+                continue
+            visited.add(expected_index)
+            previous = assigned.get(expected_index)
+            if previous is None or assign(previous.predicted_index, visited):
+                assigned[expected_index] = candidate
+                return True
+        return False
+
+    for predicted_index in sorted(candidates, key=lambda index: (-candidates[index][0].match_score, index)):
+        assign(predicted_index, set())
+
+    matches = list(assigned.values())
     matches.sort(key=lambda match: match.expected_index)
+    used_predicted = {match.predicted_index for match in matches}
+    used_expected = set(assigned)
     missed = [index for index in range(len(expected)) if index not in used_expected]
     extra = [index for index in range(len(predicted)) if index not in used_predicted]
     return matches, missed, extra
@@ -147,50 +176,54 @@ def _safe_ratio(numerator: float, denominator: float, empty_value: float = 0.0) 
     return numerator / denominator if denominator else empty_value
 
 
+def _metrics(correct: int, gold: int, predicted: int, detected: int, attribute_sum: float) -> Dict[str, float]:
+    recall = _safe_ratio(correct, gold, empty_value=1.0)
+    precision = _safe_ratio(correct, predicted, empty_value=1.0 if not gold else 0.0)
+    f1 = _safe_ratio(2 * correct, gold + predicted, empty_value=1.0)
+    return {
+        "recall": round(recall, 4),
+        "precision": round(precision, 4),
+        "f1": round(f1, 4),
+        "overall_score": round(f1, 4),
+        "difference_coverage": round(recall, 4),
+        "detection_recall": round(_safe_ratio(detected, gold, empty_value=1.0), 4),
+        "detection_precision": round(_safe_ratio(detected, predicted, empty_value=1.0 if not gold else 0.0), 4),
+        "attribute_accuracy": round(_safe_ratio(attribute_sum, detected), 4),
+    }
+
+
+def _match_report(match: Match, expected: Sequence[Difference]) -> Dict[str, Any]:
+    return {
+        "prediction_index": match.predicted_index,
+        "gold_id": expected[match.expected_index].identifier,
+        "gold_index": match.expected_index,
+        "match_score": round(match.match_score, 4),
+        "attribute_accuracy": match.attribute_accuracy,
+    }
+
+
 def _item_score(item_id: str, expected: Sequence[Difference], predicted: Sequence[Difference]) -> Dict[str, Any]:
-    matches, missed_indices, extra_indices = match_differences(predicted, expected)
+    matches, missed_indices, extra_indices = match_differences(predicted, expected, require_full_attributes=True)
+    detections, _, _ = match_differences(predicted, expected)
     true_positives = len(matches)
-    exact_matches = sum(1 for match in matches if match.attribute_accuracy >= 0.9999)
-    recall = _safe_ratio(true_positives, len(expected), empty_value=1.0)
-    precision = _safe_ratio(true_positives, len(predicted), empty_value=1.0 if not expected else 0.0)
-    attribute_accuracy = _safe_ratio(
-        sum(match.attribute_accuracy for match in matches),
-        len(matches),
-        empty_value=0.0,
-    )
-    overall = (
-        WEIGHTS["recall"] * recall
-        + WEIGHTS["precision"] * precision
-        + WEIGHTS["attribute_accuracy"] * attribute_accuracy
-    )
 
     return {
         "item_id": item_id,
-        "metrics": {
-            "recall": round(recall, 4),
-            "precision": round(precision, 4),
-            "attribute_accuracy": round(attribute_accuracy, 4),
-            "overall_score": round(overall, 4),
-            "difference_coverage": round(_safe_ratio(exact_matches, len(expected), empty_value=1.0), 4),
-        },
+        "metrics": _metrics(
+            true_positives, len(expected), len(predicted), len(detections),
+            sum(match.attribute_accuracy for match in detections),
+        ),
         "counts": {
             "gold_differences": len(expected),
             "predicted_differences": len(predicted),
             "correct_differences": true_positives,
-            "exact_correct_differences": exact_matches,
+            "exact_correct_differences": true_positives,
+            "detected_differences": len(detections),
             "missed_differences": len(missed_indices),
             "extra_predictions": len(extra_indices),
         },
-        "matched": [
-            {
-                "prediction_index": match.predicted_index,
-                "gold_id": expected[match.expected_index].identifier,
-                "gold_index": match.expected_index,
-                "match_score": match.match_score,
-                "attribute_accuracy": match.attribute_accuracy,
-            }
-            for match in matches
-        ],
+        "matched": [_match_report(match, expected) for match in matches],
+        "detection_matched": [_match_report(match, expected) for match in detections],
         "missed": [expected[index].to_dict(include_id=True) for index in missed_indices],
         "extra": [predicted[index].to_dict() for index in extra_indices],
     }
@@ -242,39 +275,29 @@ def evaluate_manifest(manifest_path: Path, prediction_path: Path) -> Dict[str, A
     gold_total = sum(report["counts"]["gold_differences"] for report in item_reports)
     predicted_total = sum(report["counts"]["predicted_differences"] for report in item_reports)
     matched_total = sum(report["counts"]["correct_differences"] for report in item_reports)
-    exact_matched_total = sum(report["counts"]["exact_correct_differences"] for report in item_reports)
+    detected_total = sum(report["counts"]["detected_differences"] for report in item_reports)
     predicted_total += sum(item["predicted_differences"] for item in unknown_items)
     attribute_sum = sum(
-        report["metrics"]["attribute_accuracy"] * report["counts"]["correct_differences"]
+        match["attribute_accuracy"]
         for report in item_reports
-    )
-    recall = _safe_ratio(matched_total, gold_total, empty_value=1.0)
-    precision = _safe_ratio(matched_total, predicted_total, empty_value=1.0 if not gold_total else 0.0)
-    attribute_accuracy = _safe_ratio(attribute_sum, matched_total)
-    overall = (
-        WEIGHTS["recall"] * recall
-        + WEIGHTS["precision"] * precision
-        + WEIGHTS["attribute_accuracy"] * attribute_accuracy
+        for match in report["detection_matched"]
     )
 
     return {
-        "schema_version": "1.0",
-        "evaluator_version": "0.2.0",
+        "schema_version": "2.0",
+        "evaluator_version": __version__,
         "model": predictions.model,
-        "weights": WEIGHTS,
-        "metrics": {
-            "recall": round(recall, 4),
-            "precision": round(precision, 4),
-            "attribute_accuracy": round(attribute_accuracy, 4),
-            "overall_score": round(overall, 4),
-            "difference_coverage": round(_safe_ratio(exact_matched_total, gold_total, empty_value=1.0), 4),
-        },
+        "scoring_method": "strict_f1",
+        "metrics": _metrics(matched_total, gold_total, predicted_total, detected_total, attribute_sum),
         "counts": {
             "items": len(item_reports),
             "gold_differences": gold_total,
             "predicted_differences": predicted_total,
             "correct_differences": matched_total,
-            "exact_correct_differences": exact_matched_total,
+            "exact_correct_differences": matched_total,
+            "detected_differences": detected_total,
+            "missed_differences": gold_total - matched_total,
+            "extra_predictions": predicted_total - matched_total,
         },
         "items": item_reports,
         "unknown_prediction_items": unknown_items,

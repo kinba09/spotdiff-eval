@@ -21,23 +21,27 @@ def _score_percent(value: float) -> str:
 def _print_report(report: Dict[str, Any]) -> None:
     metrics = report["metrics"]
     counts = report["counts"]
-    print(f"Overall score: {_score_percent(metrics['overall_score'])}")
-    print(f"Recall: {_score_percent(metrics['recall'])}")
-    print(f"Precision: {_score_percent(metrics['precision'])}")
-    print(f"Attribute accuracy: {_score_percent(metrics['attribute_accuracy'])}")
-    print(f"Difference coverage: {_score_percent(metrics['difference_coverage'])}")
+    print(f"Overall score: {_score_percent(metrics['overall_score'])} [F1]")
+    print("This is the final benchmark result.")
+    print("\nScore breakdown:")
+    print(f"  Differences found: {_score_percent(metrics['recall'])} [Recall]")
+    print(f"  Correct answers: {_score_percent(metrics['precision'])} [Precision]")
     print(
         "Differences: "
         f"{counts['correct_differences']} correct / "
-        f"{counts['gold_differences']} gold / "
-        f"{counts['predicted_differences']} predicted"
+        f"{counts['gold_differences']} expected / "
+        f"{counts['predicted_differences']} reported"
     )
-    print("\nPer image:")
+    print("\nAdditional details (including partial matches):")
+    print(f"  Changes noticed: {_score_percent(metrics['detection_recall'])} [Detection recall]")
+    print(f"  Relevant answers: {_score_percent(metrics['detection_precision'])} [Detection precision]")
+    print(f"  Detail accuracy: {_score_percent(metrics['attribute_accuracy'])} [Attribute accuracy]")
+    print("\nPer-image results:")
     for item in report["items"]:
         metrics = item["metrics"]
         counts = item["counts"]
         print(
-            f"  {item['item_id']}: {_score_percent(metrics['overall_score'])} "
+            f"  {item['item_id']}: {_score_percent(metrics['overall_score'])} [F1] "
             f"({counts['correct_differences']}/{counts['gold_differences']} correct, "
             f"{counts['extra_predictions']} extra)"
         )

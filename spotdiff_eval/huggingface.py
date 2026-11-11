@@ -13,13 +13,15 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+from . import __version__
+
 
 class DownloadError(RuntimeError):
     """Raised when a Hugging Face dataset cannot be listed or downloaded."""
 
 
 _DATASET_ID = re.compile(r"^[^/\s]+/[^/\s]+$")
-_USER_AGENT = "spotdiff-eval/0.2.2"
+_USER_AGENT = f"spotdiff-eval/{__version__}"
 
 
 def _ssl_context() -> ssl.SSLContext:

@@ -45,11 +45,25 @@ spotdiff evaluate \
   --predictions predictions/your-model.json
 ```
 
-The official development score is deterministic:
+**Overall score [F1]** is the final benchmark result. In evaluator 0.3.0, it
+balances finding differences and avoiding incorrect answers using:
 
 ```text
-0.60 * recall + 0.25 * precision + 0.15 * attribute_accuracy
+2 * fully_correct_matches / (gold_differences + predicted_differences)
 ```
+
+A complete match must identify the subject and change kind and agree with all
+applicable gold structured details, including before/after values and counts.
+Wrong details and missing fields receive no strict credit. Duplicates and
+unknown-item predictions reduce precision. Partial detection and attribute
+accuracy are diagnostic metrics only. Matching is conservative text matching;
+arbitrary paraphrases are not automatically accepted. See the repository README
+for the normalization rules and report schema `2.0` migration.
+
+Results also show **Differences found [Recall]**, the share of expected
+differences described correctly, and **Correct answers [Precision]**, the share
+of reported differences that were correct. These names use brackets to identify
+the underlying metrics.
 
 Because this is a development benchmark, the answers are public and results
 are suitable for reproducibility and community-reported comparisons. They are

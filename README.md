@@ -96,9 +96,10 @@ spotdiff evaluate \
   --output results/your-model.json
 ```
 
-The command prints the final score, coverage, recall, precision, attribute
-accuracy, per-image results, missed differences, and extra predictions. The
-JSON report contains the complete machine-readable details.
+The command shows **Overall score [F1]** first as the final benchmark result,
+followed by **Differences found [Recall]** and **Correct answers [Precision]**.
+Additional details include partial matches and detail accuracy. Per-image
+results and the JSON report provide the complete breakdown.
 
 The repository includes a complete approved baseline:
 
@@ -121,24 +122,66 @@ python3 -m spotdiff_eval.cli evaluate \
 
 ## Metrics
 
-The official development score is deterministic:
+**Overall score [F1]** is the final benchmark result. It balances finding the
+differences and avoiding incorrect answers. Starting with evaluator 0.3.0, it
+uses complete structured matches and pools counts across images
+(micro-averaging):
 
 ```text
-overall_score =
-    0.60 * recall
-  + 0.25 * precision
-  + 0.15 * attribute_accuracy
+precision = fully_correct_matches / predicted_differences
+recall = fully_correct_matches / gold_differences
+overall_score = f1 = 2 * fully_correct_matches / (gold_differences + predicted_differences)
 ```
 
-- Recall measures how many golden differences were detected.
-- Precision measures how many model predictions were correct rather than extra.
-- Attribute accuracy measures whether matched changes have the correct details.
-- Difference coverage measures the fraction of golden differences that were
-  matched with fully correct structured attributes. It is reported separately
-  and does not change the official weighted score.
+The CLI and leaderboard use plain-language names, with metric names in brackets:
 
-Matching is one-to-one and deterministic. Weak subject matches are treated as
-extra predictions rather than being counted as correct.
+| Display name | Meaning |
+| --- | --- |
+| **Overall score [F1]** | The final result, balancing missed differences and incorrect answers. |
+| Differences found [Recall] | The share of expected differences described completely and correctly. |
+| Correct answers [Precision] | The share of reported differences that were completely correct. |
+| Changes noticed [Detection recall] | The share of expected changes matched, including partial answers. |
+| Relevant answers [Detection precision] | The share of reported changes matched, including partial answers. |
+| Detail accuracy [Attribute accuracy] | Average correctness of structured details among diagnostic matches. |
+
+Additional details help explain errors; they do not add points to the overall
+score. All displayed percentages range from 0% to 100%, with higher being better.
+
+- A fully correct match must identify an eligible subject and change kind, and
+  match every structured detail supplied by the gold annotation: `attribute`,
+  `from`, `to`, and `count` where applicable. Object additions/removals require
+  their gold count when one is supplied.
+- A wrong or incomplete change is both an unmatched prediction and a missed
+  gold difference. Naming the right subject alone earns no strict credit.
+- Duplicate and unknown-item predictions remain in the prediction denominator.
+- Difference coverage is an alias of strict recall.
+- `detection_recall`, `detection_precision`, and `attribute_accuracy` describe
+  partial matches for diagnosis. They do not contribute to the headline score.
+
+Matching is deterministic and one-to-one. Complete matches are selected
+independently from diagnostic matches, maximizing their count so that a partial
+prediction cannot block a complete one. Opposite subject locations such as
+left/right are rejected. Required text fields use ordered token equality after
+normalizing case, punctuation, articles, conjunctions, and simple plurals;
+numbers, negation, and spatial relations remain significant.
+
+This is a conservative text evaluator: it does not infer arbitrary synonyms or
+verify pixels. Semantically equivalent wording can still be rejected; reviewed
+aliases and gold localization are future matching improvements.
+
+An image with no gold differences scores 100% when the prediction is empty and
+0% when it contains any prediction. Dataset F1 pools counts across images;
+correct empty images do not add true positives. An entirely empty gold and
+prediction set scores 100%.
+
+Prediction files still use schema `1.0`. Reports now use schema `2.0` and
+`scoring_method: "strict_f1"`; `correct_differences`, `matched`, `missed`, and
+`extra` refer to strict matches. Partial matches appear in `detected_differences`
+and `detection_matched`. The legacy weighted scores in `LEADERBOARD.md` are
+archived separately and are not comparable to strict F1.
+
+See [DESIGN.md](DESIGN.md) for the previous approach, the reasons for the change,
+before-and-after examples, and the report migration details.
 
 ## Optional endpoint runner
 

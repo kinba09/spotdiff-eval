@@ -27,7 +27,35 @@ python3 -m spotdiff_eval.cli evaluate \
 
 ## Results
 
-| Model | Overall | Coverage | Recall | Precision | Attribute accuracy | Evaluator |
+**Overall score is the final benchmark result.** It balances finding the
+differences and avoiding incorrect answers. All percentages run from 0% to
+100%; higher is better. The metric names appear in brackets for reference.
+
+These results use evaluator `0.3.0` and re-score saved predictions. Only
+complete, correct descriptions count toward the overall score. Conservative
+text matching can reject valid paraphrases. Historical scores appear in the
+archive below and use a different formula.
+
+| Model | **Overall score [F1]** | Differences found [Recall] | Correct answers [Precision] | Correct / expected | Evaluator |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Perfect fixture (annotation oracle) | **100.0%** | 100.0% | 100.0% | 61 / 61 | 0.3.0 |
+| GPT-6 Luna, Codex subagent ([predictions](predictions/gpt-6-luna.json)) | **16.7%** | 9.8% | 54.5% | 6 / 61 | 0.3.0 |
+| gemini-3.1-flash-lite ([predictions](predictions/gemini-3.1-flash-lite.json)) | **7.3%** | 4.9% | 14.3% | 3 / 61 | 0.3.0 |
+| gemma4-31b-it ([predictions](predictions/gemma4-31b-it.json)) | **4.9%** | 3.3% | 9.5% | 2 / 61 | 0.3.0 |
+| qwen3-vl-32b-instruct ([predictions](predictions/qwen3-vl-32b-instruct.json)) | **2.1%** | 1.6% | 3.0% | 1 / 61 | 0.3.0 |
+| llama4-scout-17b ([predictions](predictions/llama4-scout-17b.json)) | **0.0%** | 0.0% | 0.0% | 0 / 61 | 0.3.0 |
+
+- **Differences found [Recall]:** how many expected differences the model
+  described completely and correctly.
+- **Correct answers [Precision]:** how many reported differences were
+  completely correct.
+
+## Archived weighted results (before 0.3.0)
+
+These historical results used `0.60 * recall + 0.25 * precision + 0.15 *
+attribute_accuracy`, with partial detections contributing to recall and precision.
+
+| Model | Historical overall [Weighted score] | Differences fully found [Coverage] | Changes noticed [Recall] | Relevant answers [Precision] | Detail accuracy [Attribute accuracy] | Evaluator |
 | --- | ---: | ---: | ---: | ---: | ---: | --- |
 | Perfect baseline | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 0.2.0 |
 | gemini-3.1-flash-lite ([predictions](predictions/gemini-3.1-flash-lite.json)) | 32.8% | 4.9% | 19.7% | 57.1% | 44.4% | 0.2.2 |
@@ -36,7 +64,7 @@ python3 -m spotdiff_eval.cli evaluate \
 | llama4-scout-17b ([predictions](predictions/llama4-scout-17b.json)) | 14.0% | 0.0% | 3.3% | 18.2% | 50.0% | 0.2.2 |
 | GPT-6 Luna, Codex subagent ([predictions](predictions/gpt-6-luna.json)) | 37.3% | 9.8% | 13.1% | 72.7% | 75.0% | 0.2.0* |
 
-### GPT-6 Luna run details
+### Archived GPT-6 Luna run details
 
 - Model identifier: `gpt-6-luna`
 - Provider/runtime: Codex subagent
@@ -45,7 +73,8 @@ python3 -m spotdiff_eval.cli evaluate \
 - Command: `python3 -m spotdiff_eval.cli evaluate --manifest data/manifest.json --predictions predictions/gpt-6-luna.json --output results/gpt-6-luna.json`
 - Hardware: not applicable (hosted model)
 
-\* The scorer report currently labels itself `0.2.0`; this checkout's package metadata in `pyproject.toml` says `0.2.2`.
+\* The legacy scorer report labeled itself `0.2.0` while that checkout's package
+metadata said `0.2.2`. Evaluator `0.3.0` reports the package version consistently.
 
 ## Future official split
 
