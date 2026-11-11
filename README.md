@@ -10,6 +10,13 @@ and the deterministic evaluator are available for local inspection and
 reproduction. Community leaderboard results are self-reported. A future hidden
 test split can support an independently verified leaderboard.
 
+## Watch the demo
+
+A 55-second walkthrough of the task, model answers, scoring, and community
+results, with narration.
+
+https://github.com/user-attachments/assets/4fdc06c3-1e35-409f-a4ad-8ee2ee8684cc
+
 ## Run with your coding agent
 
 Tell your coding agent: **"Read RUN_BENCHMARK.md and run SpotDiff on
