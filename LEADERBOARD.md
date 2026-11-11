@@ -34,6 +34,18 @@ python3 -m spotdiff_eval.cli evaluate \
 | qwen3-vl-32b-instruct ([predictions](predictions/qwen3-vl-32b-instruct.json)) | 30.1% | 3.3% | 24.6% | 45.5% | 26.7% | 0.2.2 |
 | gemma4-31b-it ([predictions](predictions/gemma4-31b-it.json)) | 25.5% | 4.9% | 13.1% | 38.1% | 54.2% | 0.2.2 |
 | llama4-scout-17b ([predictions](predictions/llama4-scout-17b.json)) | 14.0% | 0.0% | 3.3% | 18.2% | 50.0% | 0.2.2 |
+| GPT-6 Luna, Codex subagent ([predictions](predictions/gpt-6-luna.json)) | 37.3% | 9.8% | 13.1% | 72.7% | 75.0% | 0.2.0* |
+
+### GPT-6 Luna run details
+
+- Model identifier: `gpt-6-luna`
+- Provider/runtime: Codex subagent
+- Prompt: built-in `spotdiff_eval/prompts/spotdiff_v1.txt`
+- Evaluator version: `0.2.0` as recorded in the generated score report
+- Command: `python3 -m spotdiff_eval.cli evaluate --manifest data/manifest.json --predictions predictions/gpt-6-luna.json --output results/gpt-6-luna.json`
+- Hardware: not applicable (hosted model)
+
+\* The scorer report currently labels itself `0.2.0`; this checkout's package metadata in `pyproject.toml` says `0.2.2`.
 
 ## Future official split
 

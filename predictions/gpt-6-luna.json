@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "model": "gpt-6-luna",
+  "items": [
+    {
+      "item_id": "scene_0001_playground",
+      "differences": [
+        {
+          "kind": "object_removed",
+          "subject": "playground_flag",
+          "description": "The flag on the play tower is present in the first panel and absent in the second."
+        },
+        {
+          "kind": "object_added",
+          "subject": "tree_blossoms",
+          "description": "Small blossoms appear among the tree branches in the second panel."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "boy_shirt",
+          "attribute": "shirt_design",
+          "from": "star",
+          "to": "horizontal stripes",
+          "description": "The boy's shirt has a star in the first panel and horizontal stripes in the second."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "middle_foreground_flower",
+          "attribute": "flower_type",
+          "from": "daisy",
+          "to": "tulip",
+          "description": "The middle flower in the foreground row changes from a daisy to a tulip."
+        },
+        {
+          "kind": "attribute_change",
+          "subject": "play_tower_lower_opening",
+          "attribute": "shape",
+          "from": "round porthole window",
+          "to": "arched opening",
+          "description": "The lower tower opening is round in the first panel and arched in the second."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0002_city_dog",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "dog_toy",
+          "attribute": "color",
+          "from": "yellow and blue",
+          "to": "red",
+          "description": "The toy beside the dog changes from yellow and blue to red."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0003_cactus_landscape",
+      "differences": [
+        {
+          "kind": "count_change",
+          "subject": "sky_birds",
+          "attribute": "number",
+          "from": "0",
+          "to": "2",
+          "count": 2,
+          "description": "Two birds appear in the sky in the second panel; none are visible in the first."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0004_fishing_net",
+      "differences": []
+    },
+    {
+      "item_id": "scene_0005_brussels_illustration",
+      "differences": []
+    },
+    {
+      "item_id": "scene_0006_garden",
+      "differences": []
+    },
+    {
+      "item_id": "scene_0007_charcuterie",
+      "differences": [
+        {
+          "kind": "object_added",
+          "subject": "grape_above_board",
+          "description": "A single purple grape appears on the tabletop above the board in the second panel."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0008_craft_objects",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "top_center_craft_piece",
+          "attribute": "color",
+          "from": "turquoise",
+          "to": "green",
+          "description": "The small raised craft piece near the top center changes from turquoise to green."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0009_donuts",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "lower_right_chocolate_donut",
+          "attribute": "sprinkle_colors",
+          "from": "multicolored",
+          "to": "blue and yellow",
+          "description": "The lower-right chocolate donut has multicolored sprinkles in the first panel and blue and yellow sprinkles in the second."
+        }
+      ]
+    },
+    {
+      "item_id": "scene_0010_beach",
+      "differences": [
+        {
+          "kind": "attribute_change",
+          "subject": "striped_beach_umbrella",
+          "attribute": "stripe_color",
+          "from": "blue and white",
+          "to": "brown and white",
+          "description": "The striped umbrella near the right side changes from blue and white to brown and white."
+        }
+      ]
+    }
+  ]
+}
