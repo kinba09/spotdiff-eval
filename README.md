@@ -10,6 +10,13 @@ and the deterministic evaluator are available for local inspection and
 reproduction. Community leaderboard results are self-reported. A future hidden
 test split can support an independently verified leaderboard.
 
+## Run with your coding agent
+
+Tell your coding agent: **"Read RUN_BENCHMARK.md and run SpotDiff on
+`<MODEL_NAME>`."** Replace the placeholder with the vision model you want to test.
+The [agent run guide](RUN_BENCHMARK.md) covers launching the model, collecting
+answers, and reporting the final score.
+
 ## Install
 
 From GitHub:
